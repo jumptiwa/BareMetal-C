@@ -44,7 +44,7 @@
                 "run",
                 "--rm",
                 "-v",
-                "${workspaceFolder}:/labs",
+                "${workspaceFolder}:/student",
                 "kongkrit/baremetal-c",
                 "make-project",
                 "${fileDirname}"
@@ -113,11 +113,11 @@
                 "run",
                 "--rm",
                 "-v",
-                "${workspaceFolder}:/labs",
+                "${workspaceFolder}:/student",
                 "kongkrit/baremetal-c",
                 "make",
                 "-C",
-                "/labs/code"
+                "/student/code"
             ],
             "group": {
                 "kind": "build",
@@ -139,11 +139,11 @@
                 "run",
                 "--rm",
                 "-v",
-                "${workspaceFolder}:/labs",
+                "${workspaceFolder}:/student",
                 "kongkrit/baremetal-c",
                 "make",
                 "-C",
-                "/labs/code",
+                "/student/code",
                 "clean"
             ],
             "group": {
