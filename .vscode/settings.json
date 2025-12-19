@@ -25,6 +25,7 @@
         "**/*.ps1": true,
 
         ".vscode": true,
+        "_vscode-extensions": true,
         "build-docker": true,
         "code/.obsolete*": true,
         "code/.c-experiments": true,
