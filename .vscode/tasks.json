@@ -46,8 +46,11 @@
                 "-v",
                 "${workspaceFolder}:/student",
                 "kongkrit/baremetal-c",
-                "make-project",
-                "${fileDirname}"
+                "make",
+                "-C",
+                "/student/code"
+                "DIR='${fileDirname}'",
+                "RECURSE=0"
             ],
             "group": {
                 "kind": "build",
