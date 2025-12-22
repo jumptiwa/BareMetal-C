@@ -177,20 +177,21 @@ Windows and macOS instructions are a bit different here.
 
 - Copy and paste the command below into command prompt:
   ```
-  docker run --name baremetal-c --rm -it -v ${PWD}:/labs kongkrit/baremetal-c
+  docker run --name baremetal-c --rm -it -v ${PWD}:/student kongkrit/baremetal-c
   ```
 - Your prompt will change to:
   > ```
-  > [baremetal-c]:/labs #
+  > Welcome to student BareMetal-C Environment
+  > [baremetal-c]:/student #
   > ```
   If you get the above prompt, your installation is successful.
-- From now on, we will call `[baremetal-c]:/labs #` the **tool prompt**.
+- From now on, we will call `[baremetal-c]:/student #` the **tool prompt**.
 
 ---
 
 ## 5. Test the tools (same for Windows and macOS)
 
-Type all the commands from `[baremetal-c]:/labs #` prompt (from now on, we will call `[baremetal-c]:/labs #` the **tool-prompt** to indicate that you can only run tools from here):
+Type all the commands from `[baremetal-c]:/student #` prompt (from now on, we will call `[baremetal-c]:/student #` the **tool-prompt** to indicate that you can only run tools from here):
 
 ### Check `sdcc` `z80dasm` and `make` -- all from **tool-prompt**:
 
@@ -255,7 +256,7 @@ and get back to `tool-prompt`:
 
 Log out of **tool-prompt**. Easy. type `ctrl + d` or type `exit` and you will see:
 > ```
-> [baremetal-c]:/labs/... #
+> [baremetal-c]:/student/... #
 > exit
 > ```
 and the prompt changes to `PS C:\...` (Windows), or `name@computername BareMetal-C %` (macOS)
