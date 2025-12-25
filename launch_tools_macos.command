@@ -15,4 +15,4 @@ fi
 
 # 2. Launch Docker
 # "${PWD}" ensures the path is handled correctly even if it has spaces
-docker run --name baremetal-c-prompt --rm -it -v "${PWD}:/student" kongkrit/baremetal-c
+docker run --name baremetal-c-prompt --rm -it -v "${PWD}:/student" ghcr.io/kongkrit/baremetal-c

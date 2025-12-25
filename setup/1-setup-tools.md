@@ -160,19 +160,19 @@ Windows and macOS instructions are a bit different here.
 
 - **Generate sdcc header:** copy and paste the command below into the command prompt:
   ```
-  docker run --rm -v "${PWD}/.vscode:/target" kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include
+  docker run --rm -v "${PWD}/.vscode:/target" ghcr.io/kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include
   ```
   (**For macOS:** If `terminal` or `docker` asks you for any permission, give it.)
 
 - It should print out stuff like this:
   > ```
-  > Unable to find image 'kongkrit/baremetal-c:latest' locally
-  > latest: Pulling from kongkrit/baremetal-c
+  > Unable to find image 'ghcr.io/kongkrit/baremetal-c:latest' locally
+  > latest: Pulling from ghcr.io/kongkrit/baremetal-c
   > f66b55f4c4ef: Pull complete
   >   ...
   > de0aacc391e0: Download complete
   > Digest: sha256:023b1af0e47c782f6314fda3406651b055884f6a268a632623e63f59d7d07e3c
-  > Status: Downloaded newer image for kongkrit/baremetal-c:latest
+  > Status: Downloaded newer image for ghcr.io/kongkrit/baremetal-c:latest
   > ```
 - After a few seconds (depending on your internet speed) the prompt will return. Copy and paste the following into prompt:
   ```
@@ -186,7 +186,7 @@ Windows and macOS instructions are a bit different here.
 
 - Copy and paste the command below into command prompt:
   ```
-  docker run --name baremetal-c --rm -it -v ${PWD}:/student kongkrit/baremetal-c
+  docker run --name baremetal-c --rm -it -v ${PWD}:/student ghcr.io/kongkrit/baremetal-c
   ```
 - Your prompt will change to:
   > ```

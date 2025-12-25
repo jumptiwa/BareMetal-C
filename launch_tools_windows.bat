@@ -14,7 +14,7 @@ if exist "%TARGET_PATH%" (
 
 :: 2. Launch Docker
 :: %cd% is the Windows Batch equivalent of ${PWD}
-docker run --name baremetal-c --rm -it -v "%cd%:/student" kongkrit/baremetal-c
+docker run --name baremetal-c --rm -it -v "%cd%:/student" ghcr.io/kongkrit/baremetal-c
 
 :: Keep the window open if Docker exits (optional, remove 'pause' if you want it to close immediately)
 :: pause

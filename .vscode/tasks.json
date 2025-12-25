@@ -16,13 +16,13 @@
                         ]
                     }
                 },
-                "command": "if (-not (Test-Path \"${workspaceFolder}/.vscode/sdcc-include\")) { Write-Host \"Extracting SDCC Headers...\" ; docker run --rm -v \"${workspaceFolder}/.vscode:/target\" kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include }"
+                "command": "if (-not (Test-Path \"${workspaceFolder}/.vscode/sdcc-include\")) { Write-Host \"Extracting SDCC Headers...\" ; docker run --rm -v \"${workspaceFolder}/.vscode:/target\" ghcr.io/kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include }"
             },
             "osx": {
-                "command": "if [ ! -d \"${workspaceFolder}/.vscode/sdcc-include\" ]; then echo \"Extracting SDCC Headers...\"; docker run --rm -v \"${workspaceFolder}/.vscode:/target\" kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include; fi"
+                "command": "if [ ! -d \"${workspaceFolder}/.vscode/sdcc-include\" ]; then echo \"Extracting SDCC Headers...\"; docker run --rm -v \"${workspaceFolder}/.vscode:/target\" ghcr.io/kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include; fi"
             },
             "linux": {
-                "command": "if [ ! -d \"${workspaceFolder}/.vscode/sdcc-include\" ]; then echo \"Extracting SDCC Headers...\"; docker run --rm -v \"${workspaceFolder}/.vscode:/target\" kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include; fi"
+                "command": "if [ ! -d \"${workspaceFolder}/.vscode/sdcc-include\" ]; then echo \"Extracting SDCC Headers...\"; docker run --rm -v \"${workspaceFolder}/.vscode:/target\" ghcr.io/kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include; fi"
             },
             "runOptions": {
                 "runOn": "folderOpen"
@@ -45,7 +45,7 @@
                 "--rm",
                 "-v",
                 "${workspaceFolder}:/student",
-                "kongkrit/baremetal-c",
+                "ghcr.io/kongkrit/baremetal-c",
                 "make",
                 "-C",
                 "/student/code"
@@ -117,7 +117,7 @@
                 "--rm",
                 "-v",
                 "${workspaceFolder}:/student",
-                "kongkrit/baremetal-c",
+                "ghcr.io/kongkrit/baremetal-c",
                 "make",
                 "-C",
                 "/student/code"
@@ -143,7 +143,7 @@
                 "--rm",
                 "-v",
                 "${workspaceFolder}:/student",
-                "kongkrit/baremetal-c",
+                "ghcr.io/kongkrit/baremetal-c",
                 "make",
                 "-C",
                 "/student/code",
