@@ -35,7 +35,16 @@
 
         // Hide git internals
         ".git": true,
-        ".DS_Store": true,
+
+        // --- macOS Crap ---
+        "**/.DS_Store": true,      // Finder view settings
+        "**/.AppleDouble": true,   // Resource forks
+        "**/.LSOverride": true,    // Launch Services
+
+        // --- Windows Crap ---
+        "**/Thumbs.db": true,      // Explorer thumbnails
+        "**/ehthumbs.db": true,    // Media center thumbnails
+        "**/Desktop.ini": true,    // Folder customization
         
         // Scripts
         "**/*.bat": true,
