@@ -18,10 +18,11 @@ void delay(unsigned int count) {
 
 // [TEST CASE 1: Standard Compiler Error]
 // Uncommenting the function below triggers "error 101: too many parameters"
-
+/*
 void bad_function(void) {
     delay(100, 200); 
 }
+*/
 
 void main(void) {
     unsigned char *led = (unsigned char *)LED_PORT;
