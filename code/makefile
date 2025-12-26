@@ -27,7 +27,7 @@ GREP := grep -E
 RM   := rm -f
 CP   := cp
 
-TIMESTAMP_CMD := env TZ="Asia/Bangkok" date "+%Y-%m-%d %H:%M:%S%:::z"
+TIMESTAMP_CMD := env TZ="Asia/Bangkok" date "+%Y-%m-%d %H_%M_%S %z"
 
 CODE_DIR := /student/code
 # -----------------------------------------------------------------------------
@@ -63,9 +63,9 @@ STRIPPED_DIR := $(shell echo '$(FIXED_DIR)' | perl -pe 's#.*(?:/BareMetal-C|/stu
 # 3. Echo resolved values
 # $(info RAW_DIR:      $(RAW_DIR))
 # $(info RAW_DIR2:     $(RAW_DIR2))
-$(info FIXED_DIR:    $(FIXED_DIR))
-$(info STRIPPED_DIR: $(STRIPPED_DIR))
-$(info RECURSE:      $(RECURSE))
+$(info FIXED_DIR    - $(FIXED_DIR))
+$(info STRIPPED_DIR - $(STRIPPED_DIR))
+$(info RECURSE=     - $(RECURSE))
 
 # -----------------------------------------------------------------------------
 # Discovery
@@ -90,7 +90,8 @@ ifeq ($(STRIPPED_DIR),)
     
     # If RECURSE=1, find all sub-projects (p1, p2...), excluding Root (.)
     else
-        ALL_DIRS := $(shell find . -type d \( \( -name ".*" ! -name "." \) -o -name "_defaults" -o -name "_headers" \) -prune -o -type d ! -name "." -printf "%P\n")
+        # Note the: -path "./_instructor*"
+        ALL_DIRS := $(shell find . -type d \( \( -name ".*" ! -name "." \) -o -name "_defaults" -o -name "_headers" -o -path "./_instructor/_problem_matcher_tests" \) -prune -o -type d ! -name "." -printf "%P\n")
     endif
 
 # CASE 2: Specific Target Context (DIR was .../BareMetal-C/code/bar)
@@ -109,9 +110,9 @@ endif
 
 # Debug Output
 $(info --------------------------------)
-$(info MODE:      RECURSE=$(RECURSE))
-$(info TARGET:    $(if $(STRIPPED_DIR),$(STRIPPED_DIR),Root))
-$(info BUILDING:  $(ALL_DIRS))
+$(info MODE     - RECURSE=$(RECURSE))
+$(info TARGET   - $(if $(STRIPPED_DIR),$(STRIPPED_DIR),Root))
+$(info BUILDING - $(ALL_DIRS))
 $(info --------------------------------)
 
 # -----------------------------------------------------------------------------
@@ -228,11 +229,11 @@ else
     # 8. Linker Rule
     $(1)/$(notdir $(1)).ihx: $$($(1)_STARTUP_OBJ) $$($(1)_HANDLER_OBJ) $$($(1)_NON_HANDLER_OBJ) $$($(1)_MEMMAP)
 		@echo ""
-		@echo "  NON_HANDLER_OBJ: $$($(1)_NON_HANDLER_OBJ)"
-		@echo "  HANDLER_OBJ:     $$($(1)_HANDLER_OBJ)"
-		@echo "  STARTUP_OBJ:     $$($(1)_STARTUP_OBJ)"
-		@echo "  MEMMAP:          $$($(1)_MEMMAP)"
-		@$(GREP) "^\s*-[A-Za-z]" $$($(1)_MEMMAP)
+		@echo "  NON_HANDLER_OBJ - $$($(1)_NON_HANDLER_OBJ)"
+		@echo "  HANDLER_OBJ     - $$($(1)_HANDLER_OBJ)"
+		@echo "  STARTUP_OBJ     - $$($(1)_STARTUP_OBJ)"
+		@echo "  MEMMAP          - $$($(1)_MEMMAP)"
+		@$(GREP) "^\s*-[A-Za-z]" $$($(1)_MEMMAP) || true
 		@echo ""
 		$(SDCC) $(LDFLAGS) $$($(1)_STARTUP_OBJ) $$($(1)_HANDLER_OBJ) $$($(1)_NON_HANDLER_OBJ) -Wl-u -Wl-f,$$($(1)_MEMMAP) -o $$@
 
