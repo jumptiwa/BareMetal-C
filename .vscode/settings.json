@@ -1,48 +1,74 @@
 {
+    // Config Line Endings
+    "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    
+
+    // Language-specific overrides (Windows Scripts must be CRLF)
+    "[bat]": {
+        "files.eol": "\r\n"
+    },
+    "[powershell]": {
+        "files.eol": "\r\n"
+    },
+
+    // 2. File Visibility (Student View: Focused)
     "files.exclude": {
+        // Build Artifacts
         "**/*.asm": true,
         "**/*.ld": true,
         "**/*.lk": true,
         "**/*.lst": true,
-//        "**/*.lst_": true,
         "**/*.map": true,
         "**/*.noi": true,
         "**/*.rel": true,
-//        "**/*.rel_": true,
         "**/*.rst": true,
-        "**/*.s": true,
         "**/*.sym": true,
+        "**/*.ihx": true,
+        "code/**/*.bin": true,
 
+        // System/Config Files (Hide from students)
         ".gitattributes": true,
         ".gitignore": true,
+        ".vscode": true,
+        "_vscode-extensions": true,
+
+        // Hide git internals
+        ".git": true,
+        ".DS_Store": true,
         
+        // Scripts
         "**/*.bat": true,
         "**/*.command": true,
         "**/*.sh": true,
         "**/*.ps1": true,
 
-        ".vscode": true,
-        "_vscode-extensions": true,
-        "build-docker": true,
+        // Makefiles
+        "**/makefile": true,
+        "**/Makefile": true,
+
+        // License and markdowns
+        "**/LICENSE": true,
+        "**/*.md": true,
+
+        // Hidden Source Folders
         "code/.obsolete*": true,
         "code/.c-experiments": true,
         "code/_defaults": true,
         "code/_headers": true,
-        "code/**/*.ihx": true,
-        "code/**/*.bin": true,
-//        "code/**/*.txs": true,
-        "code/**/*.md": true,
         "code/default-*.*": true,
+
+        // Hidden Document Folders
         "docs-*": true,
+        "setup": true,
+        
+        // Sim Logic
         "sim/.obsolete*": true,
         "sim/_*": true,
         "sim/subcircuits": true,
-        "setup": true,
-        "**/makefile": true,
-        "**/Makefile": true
+
+        // Source filters
+        "**/*.s": true
     },
     "search.exclude": {
         "**/*.md": true
