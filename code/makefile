@@ -68,16 +68,6 @@ $(info STRIPPED_DIR - $(STRIPPED_DIR))
 $(info RECURSE=     - $(RECURSE))
 
 # -----------------------------------------------------------------------------
-# Discovery
-# -----------------------------------------------------------------------------
-# 1. Find ALL directories recursively, ignoring:
-#    - Any folder starting with "." (like .git, .vscode)
-#    - The "_defaults" folder
-#    - The "_headers" folder
-#    - The root "." folder itself
-
-# foofooALL_DIRS := $(shell find $(FIXED_DIR) $(DEPTH) -type d \( \( -name ".*" ! -name "." \) -o -name "_defaults" -o -name "_headers" \) -prune -o -type d ! -name "." -printf "%p\n")
-# -----------------------------------------------------------------------------
 # Discovery & Target Selection
 # -----------------------------------------------------------------------------
 
@@ -90,7 +80,12 @@ ifeq ($(STRIPPED_DIR),)
     
     # If RECURSE=1, find all sub-projects (p1, p2...), excluding Root (.)
     else
-        # Note the: -path "./_instructor*"
+        # 1. Find ALL directories recursively, ignoring:
+        #    - Any folder starting with "." (like .git, .vscode)
+        #    - "_defaults" folder
+        #    - "_headers" folder
+        #    - root "." folder itself
+        #    - path "./_instructor/_problem_matcher_tests"
         ALL_DIRS := $(shell find . -type d \( \( -name ".*" ! -name "." \) -o -name "_defaults" -o -name "_headers" -o -path "./_instructor/_problem_matcher_tests" \) -prune -o -type d ! -name "." -printf "%P\n")
     endif
 
