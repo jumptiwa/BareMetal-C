@@ -32,62 +32,63 @@ Before setting up VS Code, ensure the tools (which includes *GitHub Desktop* and
 
 ## 2. Open the Workspace
 
-1.  Quit *VS Code* if it is open.
+1.  **Quit *VS Code* if it is open.**
 2.  Go it `Documents/BareMetal-C` folder using *Windows File Explorer* or *macOS Finder*.
-3.  Double click on `student.code-workspace` on that folder. The workspace file *may* show up as `student`. That is the correct one.
+3.  Double click on `student.code-workspace` on that folder. This workspace file *may* show up as `student` if you hide file extension).
    
     (full path is `~/Documents/BareMetal-C/student.code-workspace`)
 
     **macOS:** If there's any prompt asking you for any permission, give permission.
 
-1.  Launch **VS Code**.
-2.  CLick on the `Explorer` icon.
+    **Visual Studio Code** (`VS Code`) will start and ask: `Do you trust the authors of the files in this workspace?`. Click `Yes`.
 
-    ![Explorer](./pix/3-code-02.png)
-3.  Click **Open Folder**.
+    ![trust workspace](./pix/3-trust-workspace.png)
 
-    ![Open Folder](./pix/3-code-03.png)
-4.  Select `BareMetal-C` folder:
+4.  Close `VS Code`.
 
-    **Windows:**
+5.  Reopen `VS Code`. If things work correctly, it should come right back to `student.code-workspace`. After running `VS Code` this time, you will see:
 
-    ![Windows Folder Selection](./pix/3-code-04-win.png)
+    ![workspace name](./pix/3-space-name.png)
 
-    **macOS:**
-
-    ![macOS Folder Selection](./pix/3-code-04-mac-small.png)
-
-    Give permission to Visual Studio Code to access your `Documents` folder:
-
-    ![macOS Allow Access to Documents](./pix/3-code-05-mac.png)
+    If it doesn't look like the screenshot above, click `Explorer` Icon (1).
     
-6.  Click **Yes, I trust the authors**.
+    Then, check the name at (2). You **must see** the checkmark (✅) and the robot (🤖). The full thing in (2) must be:
 
-    ![trust the authors](./pix/3-code-06.png)
-    
-7.  Install the recommended `C/C++ Extension`.
+    ```
+    ✅ BareMetal-C 🤖
+    ```
 
-    ![install c extension](./pix/3-code-07.png)
+    If it does not look like the above, click `File` and select `Open Workspace from File...` and choose `student.code-workspace`.
 
-8.  **Add `baremetal-c-builder` extension to VS Code:**
+**This is the way we start `VS Code` for this class.**
+
+---
+
+## 3. Install the Extensions
+
+1.  While you're installing stuff, the pop-up may appear on the bottom right, asking you to install C/C++ extension. Click `Install`.
+
+    ![c-extension](./pix/3-c-extension.png)
+
+2.  **Add `baremetal-c-builder` extension to VS Code:**
 
     Click on the `Extensions` icon:
 
     ![extension icon](./pix/3-code-07.1.png)
 
-    Use **Windows File Explorer** or **macOS Finder**, go to `Documents/BareMetal-C/_vscode_extensions` folder.
+3.  Use **Windows File Explorer** or **macOS Finder**, go to `Documents/BareMetal-C/_vscode_extensions` folder.
 
     Drag file `baremetal-c-builder-0.X.X.vsix` (`X.X` may change) to the *extension area*:
 
     ![extension area](./pix/3-code-07.2.png)
 
-    Close VS Code. Reopen it. Click the `Extensions` icon again. Now `BareMetal-C-Builder` Extension should show up:
+4.  Close VS Code. Reopen it. Click the `Extensions` icon again. Now `BareMetal-C-Builder` Extension should show up:
 
     ![extension shown](./pix/3-code-07.3.png)
     
 ---
 
-## 3. Running the Build Environment
+## 4. Running the Build Environment
 
 1. Click `Explorer` icon to go back to folder explorer. Then right click on `code` folder:
 
@@ -113,6 +114,6 @@ We will use the **right click on a folder** to `build` and `clean` our programmi
 
 ---
 
-## 4. Next step:
+## 5. Next step:
 
 Go to [test the environment](./4-setup-test.md).
