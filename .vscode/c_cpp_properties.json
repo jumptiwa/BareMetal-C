@@ -7,8 +7,8 @@
                 "${workspaceFolder}/.vscode/sdcc-include"
             ],
             "defines": [
-                "__z80",
-                "__sdcc",
+                "__SDCC",
+                "__SCCC_z80",
                 "__naked=",
                 "__critical=",
                 "__interrupt=",
