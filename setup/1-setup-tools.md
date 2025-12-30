@@ -322,7 +322,7 @@ and get back to `tool-prompt`:
 
 Log out of **tool-prompt**. Easy. type `ctrl + d` or type `exit` and you will see:
 > ```
-> [baremetal-c]:/student/code #
+> [student]:/BareMetal-C/code # exit
 > exit
 > ```
 and the prompt changes to `PS C:\...` (Windows), or `name@computername BareMetal-C %` (macOS)
