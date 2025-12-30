@@ -6,9 +6,15 @@
         }
     ],
     "settings": {
+        // --- Distraction-Free UI ---
+        "extensions.ignoreRecommendations": true,
+        "workbench.tips.enabled": false,
+        "workbench.startupEditor": "none",
+
         "files.exclude": {
 
             // Hiding Configs (students)
+            ".devcontainer*": true,
             ".gitattributes": true,
             ".gitignore": true,
             ".vscode": true,
