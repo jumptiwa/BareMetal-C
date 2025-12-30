@@ -233,21 +233,22 @@ Windows and macOS instructions are a bit different here.
 
 - Copy and paste the command below into command prompt:
   ```
-  docker run --name baremetal-c --rm -it -v ${PWD}:/student ghcr.io/kongkrit/baremetal-c
+  docker run --name baremetal-c --rm -it -v ${PWD}:/BareMetal-C ghcr.io/kongkrit/baremetal-c
   ```
 - Your prompt will change to:
   > ```
   > Welcome to student BareMetal-C Environment
-  > [baremetal-c]:/student #
+  > 0.3.7 2025-12-30 19:08:18+0700
+  > [student]:/BareMetal-C #
   > ```
   If you get the above prompt, your installation is successful.
-- From now on, we will call `[baremetal-c]:/student #` the **tool prompt**.
+- From now on, we will call `[student]:/BareMetal-C #` the **tool prompt**.
 
 ---
 
 ## 6. Test the tools (same for Windows and macOS)
 
-Type all the commands from `[baremetal-c]:/student #` prompt (from now on, we will call `[baremetal-c]:/student #` the **tool-prompt** to indicate that you can only run tools from here):
+Type all the commands from the **tool-prompt**:
 
 ### Check `sdcc` `z80dasm` and `make` -- all from **tool-prompt**:
 
