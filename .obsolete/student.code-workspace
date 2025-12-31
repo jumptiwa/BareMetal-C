@@ -5,6 +5,7 @@
             "name": "✅ BareMetal-C 🤖"
         }
     ],
+
     "settings": {
                 
         // --- Distraction-Free UI ---
@@ -20,9 +21,9 @@
             // Configs
             ".devcontainer*": true,
             "**/.git": true,
-                    "**/.gitattributes": true,
-                    "**/.gitignore": true,
-                    "**/.vscode": true,
+            "**/.gitattributes": true,
+            "**/.gitignore": true,
+            "**/.vscode": true,
             "_vscode-extensions": true,
             "student.code-workspace*": true,
             
