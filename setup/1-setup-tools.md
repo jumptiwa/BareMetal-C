@@ -278,40 +278,40 @@ cd code
 ```
 and we use `make` to build our C programs.
 ```bash
-make DIR='.test' RECURSE=0
+make -C /BareMetal-C/code DIR='_test_setup' RECURSE=0
 ```
 
 and it should say (not exactly, but very similar):
 > ```
 >   ...
->   NON_HANDLER_OBJ: .test/main.rel
->   HANDLER_OBJ:
->   STARTUP_OBJ:     _defaults/startup_no_int.rel
->   MEMMAP:          _defaults/memmap.ld
+>   NON_HANDLER_OBJ - _test_setup/blinking_running_led.rel
+>   HANDLER_OBJ     -
+>   STARTUP_OBJ     - _defaults/startup_no_int.rel
+>   MEMMAP          - _defaults/memmap.ld
 > -b _CODE = 0x0100
 > -b _DATA = 0x4200
 > -g _STACK_TOP = 0xC000
->
-> sdcc -mz80 --no-std-crt0 _defaults/startup_no_int.rel  .test/main.rel -Wl-u -Wl-f,_defaults/memmap.ld -o .test/.test.ihx
->
-> >> Generating Binary and Disassembly .test.bin and .test.txs...
-> sdobjcopy -I ihex -O binary .test/.test.ihx .test/.test.bin
-> z80dasm -a -l -t -g0 .test/.test.bin 2> /dev/null > .test/.test.txs
-> 2025-12-22 23_30_46 +0700 ------------ built .test.bin ------------
+> 
+> sdcc -mz80 --no-std-crt0 _defaults/startup_no_int.rel  _test_setup/blinking_running_led.rel -Wl-u -Wl-f,_defaults/memmap.ld -o _test_setup/_test_setup.ihx
+> 
+> >> Generating Binary and Disassembly _test_setup.bin and _test_setup.txs...
+> sdobjcopy -I ihex -O binary _test_setup/_test_setup.ihx _test_setup/_test_setup.bin
+> z80dasm -a -l -t -g0 _test_setup/_test_setup.bin 2> /dev/null > _test_setup/_test_setup.txs
+> 2025-12-31 17_13_50 +0700 ------------ built _test_setup.bin ------------
 > ```
 
 ## 7. Test Clean-up
 
 Go back to the tool prompt and type:
-```
-make clean DIR='.test'
+```bash
+make -C /BareMetal-C/code clean DIR='_test_setup'
 ```
 
 and it should say:
 >  ```
 >     ...
 >  >> Cleaning artifacts in code folders (recursive)...
->     cleaning .test
+>     cleaning _test_setup
 > 2025-12-22 23_33_06 +0700 ------------ clean successful ------------
 >  ```
 
