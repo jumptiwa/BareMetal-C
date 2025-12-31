@@ -1,0 +1,58 @@
+{
+    "folders": [
+        {
+            "path": ".",
+            "name": "✅ BareMetal-C 🤖"
+        }
+    ],
+
+    "settings": {
+                
+        // --- Distraction-Free UI ---
+        "extensions.ignoreRecommendations": true,
+        "workbench.tips.enabled": false,
+        "workbench.startupEditor": "none",
+
+        "files.eol": "\n",
+
+        // --- Hiding Complexity ---
+        "files.exclude": {
+
+            // Configs
+            ".devcontainer*": true,
+            "**/.git": true,
+            "**/.gitattributes": true,
+            "**/.gitignore": true,
+            "**/.vscode": true,
+            "_vscode-extensions": true,
+            "student.code-workspace*": true,
+            
+            // Build, Scripts, LICENSE, md, docs, sim, setup
+            "**/makefile": true,
+            "**/Makefile": true,
+            "**/*.bat": true,
+            "**/*.command": true,
+            "**/*.sh": true,
+            "**/*.ps1": true,
+            "**/LICENSE": true,
+            "**/*.md": true,
+            "docs-*": true,
+            "setup": true,
+            "sim": true,
+
+            // non-C source code
+            "**/*.s": true,
+            "**/*/rel_": true,
+            "**/*/lst_": true,
+            
+            // Internal Folders
+            "code/_defaults": true,
+            "code/_headers": true,
+
+            // Dummy ender
+            "IfYourFileNameIsThisYouDeserveIt_-_-_-": true
+        },
+        "search.exclude": {
+        }
+    }
+}
