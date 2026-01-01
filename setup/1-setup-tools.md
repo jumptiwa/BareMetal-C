@@ -111,13 +111,13 @@ Now that you have created a new user:
 
   ### For Windows:
   - Make sure the following box is **checked ✔. We will use `WSL2`**:
-    > ```
-    > ☑ Use WSL 2 instead of Hyper-V`
-    > ```
+
+    > `☑ Use WSL 2 instead of Hyper-V`
+
   - and we recommend you **not** to install Windows containers:
-    > ```
-    > ☐ Allow Windows Containers to be used with this installation
-    > ```
+
+    > `☐ Allow Windows Containers to be used with this installation`
+
   - `Add shortcut to desktop` choice is totally up to you.
   - **Afer installation, it will force you to log out.** Just log back in.
   - You can skip all the questions
@@ -153,76 +153,43 @@ Now that you have created a new user:
 
 ---
 
-## 3. Prepare to pull the course software container
+## 3. Pull the course software container
 Windows and macOS instructions are a bit different here.
 
 ### For Windows:
 - Click Start Menu and type `powershell`. Hit enter. A new window opens with prompt:
   
-  > ```
-  > PS C:\WINDOWS\system32>
-  > ```
-- Type:
+  > `PS C:\WINDOWS\system32>`
+
+- Copy and paste the following:
   
   ```
-  cd "$HOME\Documents\BareMetal-C"
+  cd "$HOME\Documents\BareMetal-C"; if ($?) { docker run --rm -v "${PWD}\.vscode:/target" ghcr.io/kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include }; if ($?) { Write-Host "`nSetup Complete" -ForegroundColor Green }
   ```
-  and the prompt shoud change to:
-  
-  > ```
-  > PS C:\Users\NAME\Documents\BareMetal-C>
-  > ```
+
+  Wait a while, and you should get message:
+
+  > `Setup Complete`
 
 ### For MacOS
 
 - Open `terminal` app:
-- At the prompt, type:
+
+- At the prompt, copy and paste the following:
   
   ```
-  cd ~/Documents/BareMetal-C
+  cd ~/Documents/BareMetal-C && docker run --rm -v "${PWD}/.vscode:/target" ghcr.io/kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include && printf "\nSetup Complete\n"
   ```
-  and the prompt should read:
 
-  > ```
-  > name@computername BareMetal-C %
-  > ```
+  Wait a while, and you should get message:
 
----
+  > `Setup Complete`
 
-## 4. Copy sdcc header and test the tool
+## 4. Check `sdcc-include`
 
-### For both Windows and macOS:
-- Make sure `Docker Desktop` is running.
-- Make sure you are at the right folder:
-  - **Windows:** Your prompt should now read:
-    
-    > ```
-    > PS C:\Users\NAME\Documents\BareMetal-C>
-    > ```
-  - **macOS:** Your prompt should now read:
-    
-    > ```
-    > name@computername BareMetal-C %`
-	> ```
+- Copy and paste the following into prompt:
 
-- **Generate sdcc header:** copy and paste the command below into the command prompt:
-  ```
-  docker run --rm -v "${PWD}/.vscode:/target" ghcr.io/kongkrit/baremetal-c cp -r /usr/share/sdcc/include /target/sdcc-include
-  ```
-  (**For macOS:** If `terminal` or `docker` asks you for any permission, give it.)
-
-- It should print out stuff like this:
-  > ```
-  > Unable to find image 'ghcr.io/kongkrit/baremetal-c:latest' locally
-  > latest: Pulling from ghcr.io/kongkrit/baremetal-c
-  > f66b55f4c4ef: Pull complete
-  >   ...
-  > de0aacc391e0: Download complete
-  > Digest: sha256:023b1af0e47c782f6314fda3406651b055884f6a268a632623e63f59d7d07e3c
-  > Status: Downloaded newer image for ghcr.io/kongkrit/baremetal-c:latest
-  > ```
-- After a few seconds (depending on your internet speed) the prompt will return. Copy and paste the following into prompt:
-  ```
+  ```bash
   ls .vscode/sdcc-include/stdi*.h
   ```
   You should see `stdint.h` and `stdio.h` somewhere in the output.
@@ -231,17 +198,22 @@ Windows and macOS instructions are a bit different here.
 
 ## 5. Try tool command line
 
-- Copy and paste the command below into command prompt:
-  ```
+- Copy and paste the command below into **Windows Powershell** or **macOS terminal**:
+
+  ```bash
   docker run --name baremetal-c --rm -it -v ${PWD}:/BareMetal-C ghcr.io/kongkrit/baremetal-c
   ```
+
 - Your prompt will change to:
+
   > ```
   > Welcome to student BareMetal-C Environment
-  > 0.3.7 2025-12-30 19:08:18+0700
+  > 0.4.1 2026-01-01 19:22:39+0700
   > [student]:/BareMetal-C #
   > ```
+
   If you get the above prompt, your installation is successful.
+
 - From now on, we will call `[student]:/BareMetal-C #` the **tool prompt**.
 
 ---
@@ -253,32 +225,35 @@ Type all the commands from the **tool-prompt**:
 ### Check `sdcc` `z80dasm` and `make` -- all from **tool-prompt**:
 
 Check `sdcc`:
+
 ```bash
 sdcc --version
 ```
+
 It should say: `SDCC : mcs51/z80/.../f8 TD- 4.5.0 #15242 (Linux)`
 
 Check `sdasz80`:
+
 ```bash
 sdasz80 2>&1 | head -n 3
 ```
+
 It should say: `sdas Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80...)`
 
 Check `z80dasm`:
+
 ```bash
 z80dasm -V
 ```
+
 It should say: `z80dasm, Z80 assembly language generating disassembler...`
 
 Check compilation:
 
-We run code from `code` folder inside
+We use `make` to build our C programs.
+
 ```bash
-cd code
-```
-and we use `make` to build our C programs.
-```bash
-make -C /BareMetal-C/code DIR='_test_setup' RECURSE=0
+make DIR='_test_setup' RECURSE=0
 ```
 
 and it should say (not exactly, but very similar):
@@ -303,8 +278,9 @@ and it should say (not exactly, but very similar):
 ## 7. Test Clean-up
 
 Go back to the tool prompt and type:
+
 ```bash
-make -C /BareMetal-C/code clean DIR='_test_setup'
+make clean DIR='_test_setup'
 ```
 
 and it should say:
@@ -318,13 +294,16 @@ and it should say:
 ---
 
 ### How to logout of the tool prompt.
+
 and get back to `tool-prompt`:
 
 Log out of **tool-prompt**. Easy. type `ctrl + d` or type `exit` and you will see:
+
 > ```
 > [student]:/BareMetal-C/code # exit
 > exit
 > ```
+
 and the prompt changes to `PS C:\...` (Windows), or `name@computername BareMetal-C %` (macOS)
 
 ---
