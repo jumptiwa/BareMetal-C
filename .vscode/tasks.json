@@ -2,46 +2,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Check Workspace Mode",
-            "type": "shell",
-            "command": "echo Checking Mode...",
-            "linux": {
-                "command": "if [ -z \"$IS_WORKSPACE_OPEN\" ]; then for i in $(seq 1 10); do printf \"\\033[0;31m⚠️  ERROR: You opened the FOLDER. Please Close and open 'student.code-workspace' instead!\\n\\033[0m\"; done; exit 1; fi",
-                "options": {
-                    "shell": {
-                        "executable": "/bin/bash",
-                        "args": ["-c"]
-                    }
-                }
-            },
-            "osx": {
-                "command": "if [ -z \"$IS_WORKSPACE_OPEN\" ]; then for i in $(seq 1 10); do printf \"\\033[0;31m⚠️  ERROR: You opened the FOLDER. Please Close and open 'student.code-workspace' instead!\\n\\033[0m\"; done; exit 1; fi",
-                "options": {
-                    "shell": {
-                        "executable": "/bin/zsh",
-                        "args": ["-c"]
-                    }
-                }
-            },
-            "windows": {
-                "command": "if ($env:IS_WORKSPACE_OPEN -ne 'true') { 1..10 | ForEach-Object { Write-Host '⚠️ ERROR: You opened the FOLDER. Please Close and open student.code-workspace instead!' -ForegroundColor Red }; exit 1 }",
-                "options": {
-                    "shell": {
-                        "executable": "powershell.exe",
-                        "args": ["-Command"]
-                    }
-                }
-            },
-            "runOptions": {
-                "runOn": "folderOpen"
-            },
-            "presentation": {
-                "reveal": "always",
-                "panel": "dedicated",
-                "focus": true
-            }
-        },
-        {
             "label": "1. Build Project",
             "group": { "kind": "build", "isDefault": true },
             "presentation": { "echo": true, "reveal": "always", "focus": false, "panel": "shared" },
