@@ -30,33 +30,51 @@ Before setting up VS Code, ensure the tools (which includes *GitHub Desktop* and
 
 ---
 
-## 2. Open the Workspace
+## 2. Set the profile and open the Workspace
 
 1.  **Quit *VS Code* if it is open.**
-2.  Go it `Documents/BareMetal-C` folder using *Windows File Explorer* or *macOS Finder*.
-3.  Double click on `student.code-workspace` on that folder. This workspace file *may* show up as `student` if you hide file extension).
-   
-    (full path is `~/Documents/BareMetal-C/student.code-workspace`)
 
-    **macOS:** If there's any prompt asking you for any permission, give permission.
+2.  Click this link to open -> [BareMetal-C Student Profile](https://vscode.dev/profile/github/94a028b99feaaaf2c054cec55e6574de)
 
-    **Visual Studio Code** (`VS Code`) will start and ask: `Do you trust the authors of the files in this workspace?`. Click `Yes`.
+    Your web browser will open a new page that looks like this:
+
+    ![web profile](./pix/3-web-profile.png)
+
+    Click on `Create in Visual Studio Code` and give permission to your web browser to open `Visual Studio Code`.
+
+    ![allow vscode](./pix/3-allow-vscode.png)
+
+3.  `VS Code` will open a page like below:
+
+    ![create profile](./pix/3-create-profile.png)
+	
+	Click `Create`.
+	
+	And the next window will pop up. Click `Trust Publisher and Install`.
+	
+	![trust publisher](./pix/3-trust-publisher.png)
+	
+	This will take a while, and finally, VS Code window will show up.
+
+4.  Click the `settings icon` (1). Choose `Profile` (2) and select `BareMetal-C Student` (3).
+
+    ![choose profile](./pix/3-choose-profile.png)
+
+5.  Click `File` and `Open Workspace from File...` 
+
+    ![open workspace](./pix/3-open-workspace.png)
+
+    and choose this file:
+
+	> **Windows:** `C:\Users\NAME\Documents\BareMetal-C\student.code-workspace`
+
+	> **macOS:** `~/Documents/BareMetal-C/student.code-workspace`
+
+6.  When asked `Do you trust the authors of the files in this workspace?`. Click `Yes, I trust the authors`.
 
     ![trust workspace](./pix/3-trust-workspace.png)
 
-4.  Wait a while. The following window will pop up:
-
-    ![install recommended](./pix/3-install-recommended.png)
-
-    Click `Install` to install *recommended extensions*.
-
-    Wait a little while longer. It will ask you to trust my extension.
-
-    ![trust extension](./pix/3-trust-extension.png)
-
-    The blue bar on the bottom left indicates that it is working correctly.
-
-5.  If things work correctly, you will see:
+7.  If things work correctly, you will see:
 
     ![check](./pix/3-space-name.png)
 
@@ -68,7 +86,7 @@ Before setting up VS Code, ensure the tools (which includes *GitHub Desktop* and
 
     If it does not look like the above, close `VS Code` and re-open it and see the steps that you may be missing.
 
-6.  Check extension:
+8.  Check extension:
 
     Clieck `Extensions` button (1), and you should see the extension installed. (2)
 
