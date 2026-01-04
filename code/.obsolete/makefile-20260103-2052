@@ -94,11 +94,10 @@ ifeq ($(STRIPPED_DIR),)
         #    - Any folder starting with "." (like .git, .vscode)
         #    - "_defaults" folder
         #    - "_headers" folder
-        #    - "_library" folder (SYSTEM LIB)
-        #    - "_library_student" folder (STUDENT LIB)
+        #    - "_library" folder
         #    - root "." folder itself
         #    - path "./_instructor/_problem_matcher_tests"
-        ALL_DIRS := $(shell find . -type d \( \( -name ".*" ! -name "." \) -o -name "_defaults" -o -name "_headers" -o -name "_library" -o -name "_library_student" $(EXCLUDED_FLAGS) \) -prune -o -type d ! -name "." -printf "%P\n")
+        ALL_DIRS := $(shell find . -type d \( \( -name ".*" ! -name "." \) -o -name "_defaults" -o -name "_headers" -o -name "_library" $(EXCLUDED_FLAGS) \) -prune -o -type d ! -name "." -printf "%P\n")
     endif
 
 # CASE 2: Specific Target Context (DIR was .../BareMetal-C/code/bar)
@@ -144,42 +143,22 @@ _defaults/%.rel: _defaults/%.c
 	@echo ""
 
 # -----------------------------------------------------------------------------
-# Library Rules: System (_library -> baremetal.lib)
+# Library Rules (For _library folder)
 # -----------------------------------------------------------------------------
-LIB_SYS_NAME    := baremetal.lib
-LIB_SYS_DIR     := _library
-LIB_SYS_SRCS    := $(wildcard $(LIB_SYS_DIR)/*.c)
-LIB_SYS_OBJS    := $(patsubst %.c, %.rel, $(LIB_SYS_SRCS))
-LIB_SYS_TARGET  := $(LIB_SYS_DIR)/$(LIB_SYS_NAME)
+LIB_NAME    := baremetal.lib
+LIB_DIR     := _library
+LIB_SRCS    := $(wildcard $(LIB_DIR)/*.c)
+LIB_OBJS    := $(patsubst %.c, %.rel, $(LIB_SRCS))
+LIB_TARGET  := $(LIB_DIR)/$(LIB_NAME)
 
-$(LIB_SYS_DIR)/%.rel: $(LIB_SYS_DIR)/%.c
-	@echo ">> Compiling System Lib Object: $<"
+$(LIB_DIR)/%.rel: $(LIB_DIR)/%.c
+	@echo ">> Compiling Library Object: $<"
 	$(SDCC) $(CFLAGS) $(COPTFLAGS) -c $< -o $@
 
-$(LIB_SYS_TARGET): $(LIB_SYS_OBJS)
-	@echo ">> Archiving System Lib: $@"
+$(LIB_TARGET): $(LIB_OBJS)
+	@echo ">> Archiving Library: $@"
 	@$(RM) $@
-	sdar -rc $@ $(LIB_SYS_OBJS)
-	@echo ""
-
-# -----------------------------------------------------------------------------
-# Library Rules: Student (_library_student -> student.lib)
-# -----------------------------------------------------------------------------
-LIB_STU_NAME    := student.lib
-LIB_STU_DIR     := _library_student
-LIB_STU_SRCS    := $(wildcard $(LIB_STU_DIR)/*.c)
-LIB_STU_OBJS    := $(patsubst %.c, %.rel, $(LIB_STU_SRCS))
-LIB_STU_TARGET  := $(LIB_STU_DIR)/$(LIB_STU_NAME)
-
-$(LIB_STU_DIR)/%.rel: $(LIB_STU_DIR)/%.c
-	@echo ">> Compiling Student Lib Object: $<"
-	$(SDCC) $(CFLAGS) $(COPTFLAGS) -c $< -o $@
-
-$(LIB_STU_TARGET): $(LIB_STU_OBJS)
-	@echo ">> Archiving Student Lib: $@"
-	@$(RM) $@
-	# Only run ar if there are objects, otherwise warn
-	$(if $(LIB_STU_OBJS),sdar -rc $@ $(LIB_STU_OBJS),@echo "Warning: No sources in $(LIB_STU_DIR), creating dummy or skipping...")
+	sdar -rc $@ $(LIB_OBJS)
 	@echo ""
 
 # -----------------------------------------------------------------------------
@@ -188,6 +167,9 @@ $(LIB_STU_TARGET): $(LIB_STU_OBJS)
 define DEFINE_RUN_RULES
 
 # 0. Folder Name: $(1)
+#    Define the stamp file location: same level as the folder
+#    Ex: "foo/bar" -> "foo/built-bar.stamp"
+#    Ex: "lab01"   -> "./built-lab01.stamp"
 $(1)_STAMP := $(dir $(1))built-$(notdir $(1)).stamp
 
 # 1. Sources Check (non-recursive (-maxdepth 1) via 'find')
@@ -272,18 +254,16 @@ else
     endif
 
     # 8. Linker Rule
-    # NOTE: Added LIB_SYS_TARGET and LIB_STU_TARGET to dependencies and command
-    $(1)/$(notdir $(1)).ihx: $$($(1)_STARTUP_OBJ) $$($(1)_HANDLER_OBJ) $$($(1)_NON_HANDLER_OBJ) $$($(1)_MEMMAP) $(LIB_SYS_TARGET) $(LIB_STU_TARGET)
+    $(1)/$(notdir $(1)).ihx: $$($(1)_STARTUP_OBJ) $$($(1)_HANDLER_OBJ) $$($(1)_NON_HANDLER_OBJ) $$($(1)_MEMMAP) $(LIB_TARGET)
 		@echo ""
 		@echo "  NON_HANDLER_OBJ - $$($(1)_NON_HANDLER_OBJ)"
 		@echo "  HANDLER_OBJ     - $$($(1)_HANDLER_OBJ)"
 		@echo "  STARTUP_OBJ     - $$($(1)_STARTUP_OBJ)"
 		@echo "  MEMMAP          - $$($(1)_MEMMAP)"
-		@echo "  SYS LIBRARY     - $(LIB_SYS_TARGET)"
-		@echo "  STU LIBRARY     - $(LIB_STU_TARGET)"
+		@echo "  LIBRARY         - $(LIB_TARGET)"
 		@$(GREP) "^\s*-[A-Za-z]" $$($(1)_MEMMAP) || true
 		@echo ""
-		$(SDCC) $(LDFLAGS) $$($(1)_STARTUP_OBJ) $$($(1)_HANDLER_OBJ) $$($(1)_NON_HANDLER_OBJ) $(LIB_SYS_TARGET) $(LIB_STU_TARGET) -Wl-u -Wl-f,$$($(1)_MEMMAP) -o $$@
+		$(SDCC) $(LDFLAGS) $$($(1)_STARTUP_OBJ) $$($(1)_HANDLER_OBJ) $$($(1)_NON_HANDLER_OBJ) $(LIB_TARGET) -Wl-u -Wl-f,$$($(1)_MEMMAP) -o $$@
 
     # 9. Binary/Disassembly Rule
     $(1)/$(notdir $(1)).bin: $(1)/$(notdir $(1)).ihx
@@ -352,11 +332,8 @@ clean:
 	@echo ">> Cleaning artifacts in _defaults folder..."
 	cd _defaults && $(RM) $(CLEAN_EXTS)
 	@echo ""
-	@echo ">> Cleaning artifacts in _library (SYS) folder..."
-	cd _library && $(RM) $(CLEAN_EXTS) $(LIB_SYS_NAME)
-	@echo ""
-	@echo ">> Cleaning artifacts in _library_student (STU) folder..."
-	-cd _library_student && $(RM) $(CLEAN_EXTS) $(LIB_STU_NAME)
+	@echo ">> Cleaning artifacts in _library folder..."
+	cd _library && $(RM) $(CLEAN_EXTS) $(LIB_NAME)
 	@echo ""
 	@echo ">> Cleaning timestamps.."
 	@$(foreach folder,$(ALL_DIRS), echo "   cleaning $(folder) timestamps..."; $(RM) $(dir $(folder))*.stamp;)
