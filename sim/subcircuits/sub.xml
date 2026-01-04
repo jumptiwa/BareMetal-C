@@ -7,6 +7,7 @@
 		<item name="0xD000_D003_toggles_RW" package="0xD000_D003_toggles_RW" data="0xD000_D003_toggles_RW"></item>
 		<item name="0xE000_E003_LEDs" package="0xE000_E003_LEDs" data="0xE000_E003_LEDs"></item>
 		<item name="0xE010_E017_strip_LEDs" package="0xE010_E017_strip_LEDs" data="0xE010_E017_strip_LEDs"></item>
+		<item name="0xFFF0_relay_1B_RW" package="0xFFF0_relay_1B_RW" data="0xFFF0_relay_1B_RW"></item>
 
 	</itemset>
 
