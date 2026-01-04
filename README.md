@@ -26,12 +26,12 @@ Your environment should be ready.
 
 ---
   
->  **Warning:** Only perform step 5 below if you have problems with `Docker Desktop` or `VS Code`.
+>  **Warning:** Only perform instructions below if you have problems with `Docker Desktop` or `VS Code`.
 >  It will erase all your Docker `images` and reset your VS Code `settings` and `extensions`. It will not touch anything else. Your personal data files should remain safe.
 >
 >  But we cannot guarantee that. So, **If you follow the *Reset* instructions below, *proceed at your own risk*.**
 > 
->  5. Reset Docker and VS Code to original state. See [instructions](./setup/5-reset-system.md)
+>  - Reset Docker and VS Code to original state. See [instructions](./setup/5-reset-system.md)
 
 ---
 
