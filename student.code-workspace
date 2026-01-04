@@ -76,6 +76,7 @@
             
             // Internal Folders
             "code/_defaults": true,
+            "code/_subcircuit_tests": true,
             // "code/_library": true,
 
             // Dummy ender
