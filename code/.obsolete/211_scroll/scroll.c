@@ -23,12 +23,16 @@ void main(void){
     *(STRIP_WRITE_ONLY + 0) = *(SHADOW + 0) = B8(01010101);
     *(STRIP_WRITE_ONLY + 1) = *(SHADOW + 1) = B8(00110011);
     *(STRIP_WRITE_ONLY + 2) = *(SHADOW + 2) = B8(00001111);
-    *(STRIP_WRITE_ONLY + 3) = *(SHADOW + 3) = B8(01101001);
+    *(STRIP_WRITE_ONLY + 3) = *(SHADOW + 3) = B8(00000000);
+    *(STRIP_WRITE_ONLY + 4) = *(SHADOW + 4) = B8(10101010);
+    *(STRIP_WRITE_ONLY + 5) = *(SHADOW + 5) = B8(11001100);
+    *(STRIP_WRITE_ONLY + 6) = *(SHADOW + 6) = B8(11110000);
+    *(STRIP_WRITE_ONLY + 7) = *(SHADOW + 7) = B8(11111111);
 
     msb_next = false; // make compiler happy
     while (true) {
 
-        for (int8_t i = 3; i >= 0; i = i - 1) {
+        for (int8_t i = 7; i >= 0; i = i - 1) {
 
             data = *(SHADOW + i);
             if (i == 7) {
@@ -41,6 +45,6 @@ void main(void){
             *(SHADOW + i) = (data << 1) | msb_previous;
             *(STRIP_WRITE_ONLY + i) = *(SHADOW + i); 
         }
-        delay(1600);
+        delay(1000);
     }
 }
