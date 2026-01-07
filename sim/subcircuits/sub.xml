@@ -4,7 +4,7 @@
 	<itemset category="BMC Subcircuits" type="Subcircuit" folder=".">
 
 		<item name="0xC000_C003_toggles" package="0xC000_C003_toggles" data="0xC000_C003_toggles"></item>
-		<item name="0xD000_D003_toggles_RW" package="0xD000_D003_toggles_RW" data="0xD000_D003_toggles_RW"></item>
+		<item name="0xD000_D007_read2clr" package="0xD000_D007_read2clr" data="0xD000_D007_read2clr"></item>
 		<item name="0xE000_E003_LEDs" package="0xE000_E003_LEDs" data="0xE000_E003_LEDs"></item>
 		<item name="0xE010_E013_strip_LEDs" package="0xE010_E013_strip_LEDs" data="0xE010_E013_strip_LEDs"></item>
 		<item name="0xFFF0_relay_1B_RW" package="0xFFF0_relay_1B_RW" data="0xFFF0_relay_1B_RW"></item>
