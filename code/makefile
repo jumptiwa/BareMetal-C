@@ -18,7 +18,7 @@ SDOBJCOPY := sdobjcopy
 Z80DASM   := z80dasm
 
 ASMFLAGS  := -l
-CFLAGS    := -mz80 --std c99 -I_headers --Werror
+CFLAGS    := -mz80 --std c99 -I_headers -I_headers_student --Werror
 # COPTFLAGS := --no-peep --nooverlay --nogcse --nolospre --nogenconstprop --nolabelopt --noinvariant --noinduction --noloopreverse --nostdlibcall
 COPTFLAGS :=
 LDFLAGS   := -mz80 --no-std-crt0
@@ -31,6 +31,10 @@ CP   := cp
 TIMESTAMP_CMD := env TZ="Asia/Bangkok" date "+%Y-%m-%d %H_%M_%S %z"
 
 CODE_DIR := /BareMetal-C/code
+
+# VS Code IntelliSense Helper
+VSCODE_HEADER_FOLDER := /BareMetal-C/.vscode/sdcc-include
+VSCODE_HEADER_FILE   := $(VSCODE_HEADER_FOLDER)/stdint.h
 
 # List of folders to ignore (space separated, relative to BareMetal-C/code/)
 # e.g. EXCLUDED_DIRS := _instructor/_problem_matcher_tests folder_b folder_c
@@ -131,14 +135,22 @@ $(info BUILDING - $(ALL_DIRS))
 all: $(ALL_DIRS)
 
 # -----------------------------------------------------------------------------
+# VS Code Header Helper Rule
+# -----------------------------------------------------------------------------
+$(VSCODE_HEADER_FILE):
+	@echo ">> Copying SDCC headers to VS Code folder..."
+	@mkdir -p $(VSCODE_HEADER_FOLDER)
+	@cp -r /usr/share/sdcc/include/* $(VSCODE_HEADER_FOLDER)
+
+# -----------------------------------------------------------------------------
 # Defaults Rules (For _defaults folder)
 # -----------------------------------------------------------------------------
-_defaults/%.rel: _defaults/%.s
+_defaults/%.rel: _defaults/%.s $(VSCODE_HEADER_FILE)
 	@echo ">> Rebuilding Default ASM: $<"
 	$(SDAS) $(ASMFLAGS) -o $@ $<
 	@echo ""
 
-_defaults/%.rel: _defaults/%.c
+_defaults/%.rel: _defaults/%.c $(VSCODE_HEADER_FILE)
 	@echo ">> Rebuilding Default C: $<"
 	$(SDCC) $(CFLAGS) -c $< -o $@
 	@echo ""
@@ -171,6 +183,15 @@ LIB_STU_SRCS    := $(wildcard $(LIB_STU_DIR)/*.c)
 LIB_STU_OBJS    := $(patsubst %.c, %.rel, $(LIB_STU_SRCS))
 LIB_STU_TARGET  := $(LIB_STU_DIR)/$(LIB_STU_NAME)
 
+# CONDITIONAL LINKER VARIABLE:
+# If objects exist, LINK_STU_LIB = _library_student/student.lib
+# If no objects,  LINK_STU_LIB = (empty)
+ifneq ($(LIB_STU_OBJS),)
+    LINK_STU_LIB := $(LIB_STU_TARGET)
+else
+    LINK_STU_LIB :=
+endif
+
 $(LIB_STU_DIR)/%.rel: $(LIB_STU_DIR)/%.c
 	@echo ">> Compiling Student Lib Object: $<"
 	$(SDCC) $(CFLAGS) $(COPTFLAGS) -c $< -o $@
@@ -179,7 +200,7 @@ $(LIB_STU_TARGET): $(LIB_STU_OBJS)
 	@echo ">> Archiving Student Lib: $@"
 	@$(RM) $@
 	# Only run ar if there are objects, otherwise warn
-	$(if $(LIB_STU_OBJS),sdar -rc $@ $(LIB_STU_OBJS),@echo "Warning: No sources in $(LIB_STU_DIR), creating dummy or skipping...")
+	$(if $(LIB_STU_OBJS),sdar -rc $@ $(LIB_STU_OBJS),@echo "Warning: No sources in $(LIB_STU_DIR), skipping archive creation...")
 	@echo ""
 
 # -----------------------------------------------------------------------------
@@ -272,18 +293,18 @@ else
     endif
 
     # 8. Linker Rule
-    # NOTE: Added LIB_SYS_TARGET and LIB_STU_TARGET to dependencies and command
-    $(1)/$(notdir $(1)).ihx: $$($(1)_STARTUP_OBJ) $$($(1)_HANDLER_OBJ) $$($(1)_NON_HANDLER_OBJ) $$($(1)_MEMMAP) $(LIB_SYS_TARGET) $(LIB_STU_TARGET)
+    # NOTE: Uses LINK_STU_LIB (which is empty if lib is empty)
+    $(1)/$(notdir $(1)).ihx: $$($(1)_STARTUP_OBJ) $$($(1)_HANDLER_OBJ) $$($(1)_NON_HANDLER_OBJ) $$($(1)_MEMMAP) $(LIB_SYS_TARGET) $(LINK_STU_LIB)
 		@echo ""
 		@echo "  NON_HANDLER_OBJ - $$($(1)_NON_HANDLER_OBJ)"
 		@echo "  HANDLER_OBJ     - $$($(1)_HANDLER_OBJ)"
 		@echo "  STARTUP_OBJ     - $$($(1)_STARTUP_OBJ)"
 		@echo "  MEMMAP          - $$($(1)_MEMMAP)"
 		@echo "  SYS LIBRARY     - $(LIB_SYS_TARGET)"
-		@echo "  STU LIBRARY     - $(LIB_STU_TARGET)"
+		@echo "  STU LIBRARY     - $(LINK_STU_LIB)"
 		@$(GREP) "^\s*-[A-Za-z]" $$($(1)_MEMMAP) || true
 		@echo ""
-		$(SDCC) $(LDFLAGS) $$($(1)_STARTUP_OBJ) $$($(1)_HANDLER_OBJ) $$($(1)_NON_HANDLER_OBJ) $(LIB_SYS_TARGET) $(LIB_STU_TARGET) -Wl-u -Wl-f,$$($(1)_MEMMAP) -o $$@
+		$(SDCC) $(LDFLAGS) $$($(1)_STARTUP_OBJ) $$($(1)_HANDLER_OBJ) $$($(1)_NON_HANDLER_OBJ) $(LIB_SYS_TARGET) $(LINK_STU_LIB) -Wl-u -Wl-f,$$($(1)_MEMMAP) -o $$@
 
     # 9. Binary/Disassembly Rule
     $(1)/$(notdir $(1)).bin: $(1)/$(notdir $(1)).ihx
