@@ -16,6 +16,8 @@
 
 <item itemtype="Fixed Voltage" CircId="Fixed Voltage-12" mainComp="false" Show_id="false" Show_Val="false" Pos="-844,-212" rotation="270" hflip="1" vflip="1" label="Fixed Voltage-12" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="false" />
 
+<item itemtype="WS2812" CircId="WS2812-13" mainComp="false" Show_id="false" Show_Val="false" Pos="-1092,-248" rotation="0" hflip="1" vflip="1" label="WS2812-13" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Rows="4" Cols="4" RstTime="50 _µs" T0H="400 _ns" T0L="850 _ns" T1H="850 _ns" T1H="400 _ns" />
+
 <item itemtype="Connector" uid="Connector-1" startpinid="Fixed Voltage-10-outnod" endpinid="LedMatrix-8-pinRow2" pointList="-940,-292,-876,-292" />
 
 <item itemtype="Connector" uid="Connector-2" startpinid="Fixed Voltage-9-outnod" endpinid="LedMatrix-8-pinRow0" pointList="-940,-308,-876,-308" />

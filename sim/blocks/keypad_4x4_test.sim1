@@ -26,6 +26,16 @@
 
 <item itemtype="Or Gate" CircId="Or Gate-68" mainComp="false" Show_id="false" Show_Val="false" Pos="156,-328" rotation="0" hflip="1" vflip="1" label="Or Gate-68" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Input_High_V="3.5 V" Input_Low_V="3.4 V" Input_Imped="1000 MΩ" Invert_Inputs="true" Num_Inputs="2 _Inputs" Out_High_V="5 V" Out_Low_V="0 V" Out_Imped="40 Ω" initHigh="false" Inverted="false" Open_Collector="false" Tpd_ps="1 ns" Tr_ps="1 ns" Tf_ps="1 ns" />
 
+<item itemtype="Probe" CircId="Probe-71" mainComp="false" Show_id="false" Show_Val="true" Pos="196,-380" rotation="-45" hflip="1" vflip="1" label="Probe-71" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
+<item itemtype="Probe" CircId="Probe-73" mainComp="false" Show_id="false" Show_Val="true" Pos="196,-308" rotation="-45" hflip="1" vflip="-1" label="Probe-73" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
+<item itemtype="Probe" CircId="Probe-75" mainComp="false" Show_id="false" Show_Val="true" Pos="140,-284" rotation="-45" hflip="1" vflip="1" label="Probe-75" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
+<item itemtype="Probe" CircId="Probe-77" mainComp="false" Show_id="false" Show_Val="true" Pos="180,-260" rotation="-45" hflip="1" vflip="1" label="Probe-77" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
+<item itemtype="Probe" CircId="Probe-79" mainComp="false" Show_id="false" Show_Val="true" Pos="188,-224" rotation="-45" hflip="1" vflip="1" label="Probe-79" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
+
 <item itemtype="Node" CircId="Node-53" mainComp="false" Pos="12,-268" />
 
 <item itemtype="Node" CircId="Node-54" mainComp="false" Pos="28,-260" />
@@ -43,6 +53,16 @@
 <item itemtype="Node" CircId="Node-67" mainComp="false" Pos="116,-340" />
 
 <item itemtype="Node" CircId="Node-69" mainComp="false" Pos="108,-332" />
+
+<item itemtype="Node" CircId="Node-72" mainComp="false" Pos="180,-344" />
+
+<item itemtype="Node" CircId="Node-74" mainComp="false" Pos="180,-336" />
+
+<item itemtype="Node" CircId="Node-76" mainComp="false" Pos="124,-256" />
+
+<item itemtype="Node" CircId="Node-78" mainComp="false" Pos="124,-224" />
+
+<item itemtype="Node" CircId="Node-80" mainComp="false" Pos="132,-208" />
 
 <item itemtype="Node" CircId="Node-81" mainComp="false" Pos="68,-244" />
 
@@ -100,6 +120,36 @@
 
 <item itemtype="Connector" uid="Connector-117" startpinid="Node-69-2" endpinid="KeyPad-1-Pin2" pointList="108,-332,108,-324,76,-324" />
 
+<item itemtype="Connector" uid="Connector-123" startpinid="Probe-71-inpin" endpinid="Node-72-1" pointList="180,-364,180,-344" />
+
+<item itemtype="Connector" uid="Connector-124" startpinid="Or Gate-64-out" endpinid="Node-72-0" pointList="172,-344,180,-344" />
+
+<item itemtype="Connector" uid="Connector-125" startpinid="Node-72-2" endpinid="Bus-34-ePin1" pointList="180,-344,188,-344" />
+
+<item itemtype="Connector" uid="Connector-126" startpinid="Probe-73-inpin" endpinid="Node-74-1" pointList="180,-324,180,-336" />
+
+<item itemtype="Connector" uid="Connector-127" startpinid="Or Gate-68-out" endpinid="Node-74-0" pointList="172,-328,172,-336,180,-336" />
+
+<item itemtype="Connector" uid="Connector-128" startpinid="Node-74-2" endpinid="Bus-34-ePin2" pointList="180,-336,188,-336" />
+
+<item itemtype="Connector" uid="Connector-129" startpinid="Node-76-1" endpinid="Probe-75-inpin" pointList="124,-256,124,-268" />
+
+<item itemtype="Connector" uid="Connector-130" startpinid="Or Gate-52-out" endpinid="Node-76-0" pointList="116,-256,124,-256" />
+
+<item itemtype="Connector" uid="Connector-131" startpinid="Node-76-2" endpinid="Tunnel-47-pin" pointList="124,-256,132,-256" />
+
+<item itemtype="Connector" uid="Connector-132" startpinid="Probe-77-inpin" endpinid="Node-78-1" pointList="164,-244,124,-244,124,-224" />
+
+<item itemtype="Connector" uid="Connector-133" startpinid="Or Gate-57-out" endpinid="Node-78-0" pointList="116,-224,124,-224" />
+
+<item itemtype="Connector" uid="Connector-134" startpinid="Node-78-2" endpinid="Bus-32-ePin1" pointList="124,-224,132,-224" />
+
+<item itemtype="Connector" uid="Connector-135" startpinid="Node-80-1" endpinid="Probe-79-inpin" pointList="132,-208,172,-208" />
+
+<item itemtype="Connector" uid="Connector-136" startpinid="Or Gate-59-out" endpinid="Node-80-0" pointList="116,-208,132,-208" />
+
+<item itemtype="Connector" uid="Connector-137" startpinid="Node-80-2" endpinid="Bus-32-ePin2" pointList="132,-208,132,-216" />
+
 <item itemtype="Connector" uid="Connector-138" startpinid="Node-62-2" endpinid="Or Gate-52-in2" pointList="52,-252,84,-252" />
 
 <item itemtype="Connector" uid="Connector-141" startpinid="Node-56-2" endpinid="Node-81-0" pointList="60,-244,68,-244" />
@@ -117,15 +167,5 @@
 <item itemtype="Connector" uid="Connector-148" startpinid="Node-67-2" endpinid="Node-83-0" pointList="116,-340,116,-324" />
 
 <item itemtype="Connector" uid="Connector-149" startpinid="Node-83-2" endpinid="KeyPad-1-Pin3" pointList="116,-324,116,-308,76,-308" />
-
-<item itemtype="Connector" uid="Connector-150" startpinid="Or Gate-68-out" endpinid="Bus-34-ePin2" pointList="172,-328,172,-336,188,-336" />
-
-<item itemtype="Connector" uid="Connector-151" startpinid="Or Gate-64-out" endpinid="Bus-34-ePin1" pointList="172,-344,188,-344" />
-
-<item itemtype="Connector" uid="Connector-152" startpinid="Or Gate-52-out" endpinid="Tunnel-47-pin" pointList="116,-256,132,-256" />
-
-<item itemtype="Connector" uid="Connector-153" startpinid="Or Gate-57-out" endpinid="Bus-32-ePin1" pointList="116,-224,132,-224" />
-
-<item itemtype="Connector" uid="Connector-154" startpinid="Or Gate-59-out" endpinid="Bus-32-ePin2" pointList="116,-208,132,-208,132,-216" />
 
 </circuit>
