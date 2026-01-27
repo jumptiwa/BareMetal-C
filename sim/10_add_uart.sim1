@@ -2,7 +2,7 @@
 
 <item itemtype="MCU" CircId="Z80-2" mainComp="false" Show_id="true" Show_Val="false" Pos="-828,156" rotation="0" hflip="1" vflip="1" label="Z80" idLabPos="23.4707,-16.3727" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="true" Producer="Zilog" CMOS="false" Single cycle I/O="false" Int_Vector="false" MainMcu="true" />
 
-<item itemtype="Memory" CircId="Memory-5" mainComp="false" Show_id="true" Show_Val="false" Pos="-668,220" rotation="0" hflip="1" vflip="1" label="ROM: 0x0000-0x3FFF" idLabPos="-40.1193,-93.0902" labelrot="0" valLabPos="-16,20" valLabRot="0" Address_Bits="14 _bits" Data_Bits="8 _bits" Persistent="true" Asynch="true" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1000 MΩ" Out_High_V="5 V" Out_Low_V="0 V" Out_Imped="40 Ω" Inverted="false" Open_Collector="false" pd_n="1 _Gates" Tpd_ps="10 ns" Tr_ps="3 ns" Tf_ps="4 ns" Mem="243,237,86,49,0,192,195,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,254,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,237,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,120,177,40,8,17,0,72,33,218,1,237,176,205,217,1,205,71,1,24,254,235,33,0,0,34,0,64,42,0,64,175,237,82,208,42,0,64,35,34,0,64,24,240,30,0,123,254,16,208,198,32,79,62,0,206,224,71,33,16,64,22,0,25,126,2,28,24,233,221,229,221,33,0,0,221,57,245,33,16,64,54,60,46,17,54,66,46,18,54,149,46,19,54,133,46,20,54,133,46,21,54,149,46,22,54,66,46,23,54,60,46,24,54,128,46,25,54,0,46,26,54,63,46,27,54,72,46,28,54,136,46,29,54,72,46,30,54,63,46,31,54,128,205,46,1,1,0,15,203,120,32,51,120,198,16,95,62,0,206,64,87,123,198,255,221,119,254,122,206,255,221,119,255,120,214,15,32,8,26,79,225,229,126,18,24,14,175,144,48,6,225,229,126,18,24,4,33,16,64,113,5,24,201,33,32,3,205,23,1,205,46,1,24,187,201,206,224,221,119,248,221,110,250,221,102,251,126,221,119,254,225,229,221,126,254,119,221,53,255,195,103,1,33,64,6,205,23,1,195,99,1,201,224,221,119,248,221,110,250,221,102,251,126,221,119,254,225,229,221,126,254,119,221,53,255,195,139,1,33,232,3,205,23,1,195,135,1,201," />
+<item itemtype="Memory" CircId="Memory-5" mainComp="false" Show_id="true" Show_Val="false" Pos="-668,220" rotation="0" hflip="1" vflip="1" label="ROM: 0x0000-0x3FFF" idLabPos="-40.1193,-93.0902" labelrot="0" valLabPos="-16,20" valLabRot="0" Address_Bits="14 _bits" Data_Bits="8 _bits" Persistent="true" Asynch="true" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1000 MΩ" Out_High_V="5 V" Out_Low_V="0 V" Out_Imped="40 Ω" Inverted="false" Open_Collector="false" pd_n="1 _Gates" Tpd_ps="10 ns" Tr_ps="3 ns" Tf_ps="4 ns" Mem="243,237,86,49,0,192,195,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,254,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,237,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,120,177,40,8,17,18,72,33,181,2,237,176,205,180,2,205,169,2,24,254,14,0,121,214,16,48,11,33,0,72,6,0,9,54,0,12,24,240,33,16,72,54,3,33,17,72,54,4,46,4,62,3,195,58,1,71,93,33,0,72,22,0,25,78,62,1,4,24,1,135,16,253,177,119,201,71,93,33,0,72,22,0,25,78,62,1,4,24,1,135,16,253,47,161,119,201,245,71,58,16,72,79,89,58,17,72,253,33,0,0,253,57,253,119,0,253,35,253,119,0,62,4,144,218,39,2,58,16,72,95,58,17,72,253,119,0,213,88,22,0,33,154,1,25,25,94,35,102,107,209,233,164,1,207,1,181,1,234,1,9,2,89,253,33,0,0,253,57,253,126,0,253,35,253,119,0,24,114,253,33,0,0,253,57,253,126,0,253,35,253,119,0,58,16,72,183,32,3,89,24,91,29,24,88,253,33,0,0,253,57,253,126,0,253,35,253,119,0,58,16,72,214,7,32,3,89,24,64,28,24,61,58,17,72,183,32,7,33,0,0,57,126,24,6,33,1,0,57,126,61,253,33,1,0,253,57,253,119,0,89,24,30,58,17,72,214,15,32,7,33,0,0,57,126,24,6,33,1,0,57,126,60,253,33,1,0,253,57,253,119,0,89,58,16,72,147,32,10,58,17,72,33,1,0,57,150,40,27,213,58,17,72,111,58,16,72,205,78,1,209,213,253,33,3,0,253,57,253,110,0,123,205,58,1,209,33,16,72,115,33,1,0,57,126,50,17,72,241,201,14,0,121,254,16,208,198,32,95,62,0,206,224,87,33,0,72,6,0,9,126,18,12,24,233,58,16,208,203,127,200,203,191,50,64,224,254,17,40,13,254,32,40,14,254,34,40,15,214,49,40,16,201,62,1,195,99,1,62,3,195,99,1,62,4,195,99,1,62,2,195,99,1,205,23,1,205,121,2,205,96,2,24,248,201," />
 
 <item itemtype="Clock" CircId="Clock-6" mainComp="false" Show_id="false" Show_Val="false" Pos="-860,332" rotation="0" hflip="1" vflip="1" label="Clock-6" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="true" Running="true" Voltage="5 V" Freq="200 kHz" Always_On="false" />
 
@@ -73,21 +73,21 @@
 <item itemtype="Buffer" CircId="Buffer-65" mainComp="false" Show_id="false" Show_Val="false" Pos="-620,304" rotation="270" hflip="1" vflip="1" label="Buffer-65" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1000 MΩ" Invert_Inputs="false" Out_High_V="5 V" Out_Low_V="0 V" Out_Imped="40 Ω" initHigh="false" Inverted="true" Open_Collector="false" Tristate="false" Tpd_ps="10 ns" Tr_ps="3 ns" Tf_ps="4 ns" />
 
 <item itemtype="Subcircuit" CircId="0xC000_C003_toggles-109" mainComp="false" Show_id="false" Show_Val="false" Pos="-856,-68" rotation="0" hflip="1" vflip="1" label="0xC000_C003_toggles-109" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0">
-<mainCompProps MainCompId="Switch-172" Norm_Close="false" DT="true" Poles="1" />
-
-<mainCompProps MainCompId="Led-247" Color="White" Grounded="false" Threshold="1 V" MaxCurrent="4 mA" Resistance="1 Ω" />
-
-<mainCompProps MainCompId="Led-194" Color="White" Grounded="false" Threshold="1 V" MaxCurrent="4 mA" Resistance="1 Ω" />
+<mainCompProps MainCompId="Switch-214" Norm_Close="false" DT="true" Poles="1" />
 
 <mainCompProps MainCompId="Switch-217" Norm_Close="false" DT="true" Poles="1" />
 
-<mainCompProps MainCompId="Led-254" Color="White" Grounded="false" Threshold="1 V" MaxCurrent="4 mA" Resistance="1 Ω" />
-
 <mainCompProps MainCompId="Switch-210" Norm_Close="false" DT="true" Poles="1" />
+
+<mainCompProps MainCompId="Switch-172" Norm_Close="false" DT="true" Poles="1" />
+
+<mainCompProps MainCompId="Led-194" Color="White" Grounded="false" Threshold="1 V" MaxCurrent="4 mA" Resistance="1 Ω" />
 
 <mainCompProps MainCompId="Led-176" Color="White" Grounded="false" Threshold="1 V" MaxCurrent="4 mA" Resistance="1 Ω" />
 
-<mainCompProps MainCompId="Switch-214" Norm_Close="false" DT="true" Poles="1" />
+<mainCompProps MainCompId="Led-247" Color="White" Grounded="false" Threshold="1 V" MaxCurrent="4 mA" Resistance="1 Ω" />
+
+<mainCompProps MainCompId="Led-254" Color="White" Grounded="false" Threshold="1 V" MaxCurrent="4 mA" Resistance="1 Ω" />
 </item>
 
 <item itemtype="Subcircuit" CircId="0xE000_E003_LEDs-110" mainComp="false" Show_id="false" Show_Val="false" Pos="-852,4" rotation="0" hflip="1" vflip="1" label="0xE000_E003_LEDs-110" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" />
@@ -113,21 +113,21 @@
 </item>
 
 <item itemtype="Subcircuit" CircId="0xD000_D007_read2clr-125" mainComp="false" Show_id="false" Show_Val="false" Pos="-852,60" rotation="0" hflip="1" vflip="1" label="0xD000_D007_read2clr-125" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0">
-<mainCompProps MainCompId="Push-384" Norm_Close="false" Poles="1" />
+<mainCompProps MainCompId="Push-377" Norm_Close="false" Poles="1" />
 
-<mainCompProps MainCompId="Push-387" Norm_Close="false" Poles="1" />
+<mainCompProps MainCompId="Push-384" Norm_Close="false" Poles="1" />
 
 <mainCompProps MainCompId="Push-310" Norm_Close="false" Poles="1" />
 
 <mainCompProps MainCompId="Push-381" Norm_Close="false" Poles="1" />
 
-<mainCompProps MainCompId="Push-264" Norm_Close="false" Poles="1" />
-
-<mainCompProps MainCompId="Push-377" Norm_Close="false" Poles="1" />
-
 <mainCompProps MainCompId="Push-234" Norm_Close="false" Poles="1" />
 
 <mainCompProps MainCompId="Push-282" Norm_Close="false" Poles="1" />
+
+<mainCompProps MainCompId="Push-264" Norm_Close="false" Poles="1" />
+
+<mainCompProps MainCompId="Push-387" Norm_Close="false" Poles="1" />
 </item>
 
 <item itemtype="Tunnel" CircId="Tunnel-126" mainComp="false" Show_id="false" Show_Val="false" Pos="-864,68" rotation="0" hflip="1" vflip="1" label="Tunnel-126" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="ADDR" IsBus="true" />
