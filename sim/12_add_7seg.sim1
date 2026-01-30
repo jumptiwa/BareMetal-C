@@ -89,21 +89,21 @@
 </item>
 
 <item itemtype="Subcircuit" CircId="0xD000_D007_read2clr-125" mainComp="false" Show_id="false" Show_Val="false" Pos="-852,60" rotation="0" hflip="1" vflip="1" label="0xD000_D007_read2clr-125" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0">
-<mainCompProps MainCompId="Push-234" Norm_Close="false" Poles="1" />
-
 <mainCompProps MainCompId="Push-387" Norm_Close="false" Poles="1" />
 
 <mainCompProps MainCompId="Push-282" Norm_Close="false" Poles="1" />
 
-<mainCompProps MainCompId="Push-310" Norm_Close="false" Poles="1" />
+<mainCompProps MainCompId="Push-377" Norm_Close="false" Poles="1" />
 
-<mainCompProps MainCompId="Push-264" Norm_Close="false" Poles="1" />
+<mainCompProps MainCompId="Push-310" Norm_Close="false" Poles="1" />
 
 <mainCompProps MainCompId="Push-381" Norm_Close="false" Poles="1" />
 
-<mainCompProps MainCompId="Push-377" Norm_Close="false" Poles="1" />
+<mainCompProps MainCompId="Push-264" Norm_Close="false" Poles="1" />
 
 <mainCompProps MainCompId="Push-384" Norm_Close="false" Poles="1" />
+
+<mainCompProps MainCompId="Push-234" Norm_Close="false" Poles="1" />
 </item>
 
 <item itemtype="Tunnel" CircId="Tunnel-126" mainComp="false" Show_id="false" Show_Val="false" Pos="-864,68" rotation="0" hflip="1" vflip="1" label="Tunnel-126" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="ADDR" IsBus="true" />
@@ -144,13 +144,13 @@
 
 <item itemtype="Tunnel" CircId="Tunnel-145" mainComp="false" Show_id="false" Show_Val="false" Pos="-884,-36" rotation="-720" hflip="1" vflip="1" label="Tunnel-145" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="DATA" IsBus="true" />
 
-<item itemtype="Subcircuit" CircId="0xE800_E803_BCD_7seg-148" mainComp="false" Show_id="false" Show_Val="false" Pos="-1004,-148" rotation="0" hflip="1" vflip="1" label="0xE800_E803_BCD_7seg-148" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Tunnel" CircId="Tunnel-149" mainComp="false" Show_id="false" Show_Val="false" Pos="-888,-124" rotation="0" hflip="1" vflip="1" label="Tunnel-149" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="WR_" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-149" mainComp="false" Show_id="false" Show_Val="false" Pos="-1024,-124" rotation="0" hflip="1" vflip="1" label="Tunnel-149" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="WR_" IsBus="false" />
+<item itemtype="Tunnel" CircId="Tunnel-150" mainComp="false" Show_id="false" Show_Val="false" Pos="-884,-132" rotation="-360" hflip="1" vflip="1" label="Tunnel-150" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="DATA" IsBus="true" />
 
-<item itemtype="Tunnel" CircId="Tunnel-150" mainComp="false" Show_id="false" Show_Val="false" Pos="-1020,-132" rotation="-360" hflip="1" vflip="1" label="Tunnel-150" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="DATA" IsBus="true" />
+<item itemtype="Tunnel" CircId="Tunnel-151" mainComp="false" Show_id="false" Show_Val="false" Pos="-884,-140" rotation="0" hflip="1" vflip="1" label="Tunnel-151" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="ADDR" IsBus="true" />
 
-<item itemtype="Tunnel" CircId="Tunnel-151" mainComp="false" Show_id="false" Show_Val="false" Pos="-1020,-140" rotation="0" hflip="1" vflip="1" label="Tunnel-151" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="ADDR" IsBus="true" />
+<item itemtype="Subcircuit" CircId="0xE800_E801_BCD_7seg-152" mainComp="false" Show_id="false" Show_Val="false" Pos="-868,-148" rotation="0" hflip="1" vflip="1" label="0xE800_E801_BCD_7seg-152" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" />
 
 <item itemtype="Node" CircId="Node-34" mainComp="false" Pos="-900,252" />
 
@@ -422,10 +422,10 @@
 
 <item itemtype="Connector" uid="Connector-416" startpinid="Tunnel-144-pin" endpinid="0xC010_C017_toggles-142-RD_" pointList="-884,-28,-876,-28" />
 
-<item itemtype="Connector" uid="Connector-417" startpinid="Tunnel-151-pin" endpinid="0xE800_E803_BCD_7seg-148-ADDR" pointList="-1020,-140,-1012,-140" />
+<item itemtype="Connector" uid="Connector-420" startpinid="Tunnel-151-pin" endpinid="0xE800_E801_BCD_7seg-152-ADDR" pointList="-884,-140,-876,-140" />
 
-<item itemtype="Connector" uid="Connector-418" startpinid="Tunnel-150-pin" endpinid="0xE800_E803_BCD_7seg-148-DATA" pointList="-1020,-132,-1012,-132" />
+<item itemtype="Connector" uid="Connector-421" startpinid="Tunnel-150-pin" endpinid="0xE800_E801_BCD_7seg-152-DATA" pointList="-884,-132,-876,-132" />
 
-<item itemtype="Connector" uid="Connector-419" startpinid="Tunnel-149-pin" endpinid="0xE800_E803_BCD_7seg-148-WR_" pointList="-1024,-124,-1012,-124" />
+<item itemtype="Connector" uid="Connector-422" startpinid="Tunnel-149-pin" endpinid="0xE800_E801_BCD_7seg-152-WR_" pointList="-888,-124,-876,-124" />
 
 </circuit>
