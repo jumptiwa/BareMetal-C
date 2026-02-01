@@ -3,13 +3,13 @@
 #include "baremetal_binary.h"
 
 // VIEW
-#define MATRIX_WIDTH (16)
-#define MATRIX_BASE ((volatile uint8_t *)0xE020U)
-#define HEX_DISP ((volatile uint8_t *)0xE800U)
-#define COLOR_DISP ((volatile bool *)0xE000U)
+#define DISP_WIDTH (16)
+#define MATRIX_BASE ((volatile uint8_t * const)0xE020U)
+#define HEX_DISP ((volatile uint8_t * const)0xE800U)
+#define COLOR_DISP ((volatile bool * const)0xE000U)
 
 // CONTROLLER
-#define KEYPAD ((volatile uint8_t *)0xD010U)
+#define KEYPAD ((volatile const uint8_t * const)0xD010U)
 
 // UART debug output
 #define UART_DATA_OUT ((volatile uint8_t *)0xE040U)
@@ -41,7 +41,7 @@ void model_paint_row_col(model_t *mp, uint8_t row, uint8_t col, uint8_t color){
 }
 
 void model_init(model_t *mp){
-    for (uint8_t i = 0; i < MATRIX_WIDTH; i=i+1) {
+    for (uint8_t i = 0; i < DISP_WIDTH; i=i+1) {
         mp->matrix[i] = B8(00000000);
     }
     mp->row = 3;
@@ -66,25 +66,27 @@ void model_update(model_t *mp, command c) {
                     break;
         case LEFT:  new_col = (mp->col == 0) ? mp->col : mp->col - 1;
                     break;
-        case RIGHT: new_col = (mp->col == (MATRIX_WIDTH-1)) ? mp->col: mp->col + 1;
+        case RIGHT: new_col = (mp->col == (DISP_WIDTH-1)) ? mp->col: mp->col + 1;
                     break;
         case TOGGLE_COLOR:  
                     new_color = !mp->color;
                     break;
         default:    break;
     }
+    // update matrix
+    model_paint_row_col(mp, new_row, new_col, new_color);
 
     // state <= next_state
     mp->row      = new_row;
     mp->col      = new_col;
     mp->color    = new_color;
-    // update model
-    model_paint_row_col(mp, mp->row, mp->col, mp->color);
+    // we didn't copy matrix. it's updated in place.
+
 }
 
 // VIEW update - transfer MODEL to VIEW
 void update_view(const model_t *mp){
-    for (uint8_t i = 0; i < MATRIX_WIDTH; i=i+1) {
+    for (uint8_t i = 0; i < DISP_WIDTH; i=i+1) {
         *(MATRIX_BASE + i) = mp->matrix[i];
     }
     *(HEX_DISP +1) = mp->row;
@@ -128,7 +130,7 @@ void main(void){
     model_t *mp = &m;
     model_init(mp);
     while (true) {
-        read_keypad_and_model_update(mp);
         update_view(mp);
+        read_keypad_and_model_update(mp);
     }
 }
