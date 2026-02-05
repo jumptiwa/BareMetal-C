@@ -23,10 +23,11 @@
 ---
 
 ### **2. Data Types & Precision**
-*Rationale: Z80 `int` size varies by compiler. Explicit types prevent ambiguity.*
+*Rationale: Z80 `int` size varies by compiler. Explicit types prevent ambiguity. The C99 standard does not specify whether `char` by itself should be `signed` or `unsigned`; avoid using `char` as well.*
 
 * **Rule 2.1: Use `<stdint.h>` types.**
-  * **Forbidden:** Never use standard `int`, `short`, or `long`.
+  * **Forbidden:** Never use standard `int`, `short`, or `long`, and `char`.
+  * **For `char`:** Use `uint8_t` instead of `char`. It is guaranteed to be 8-bit unsigned.
   * **Addresses:** Always use `uint16_t` (Z80 address bus is 16-bit).
   * **Unsigned Data:** Use `uint8_t` for 8-bit values and `uint16_t` for 16-bit values.
   * **Signed Data:** Use `int8_t` or `int16_t` **only** when dealing with signed data (2's complement  number), whether for calculation or reading from IO address.
