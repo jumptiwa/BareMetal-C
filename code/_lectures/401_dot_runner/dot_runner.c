@@ -21,14 +21,10 @@ typedef enum {
     NONE, STOP, LEFT, RIGHT, UP, DOWN
 } command;
 
-typedef enum {
-    STOP, LEFT, RIGHT, UP, DOWN
-} direction;
-
 typedef struct {
     uint8_t row, col;
     //uint8_t prev_row, prev_col;
-    direction dir;
+    command cmd;
 } model_t;
 
 void model_init(model_t *mp){
@@ -36,36 +32,42 @@ void model_init(model_t *mp){
     mp->col = 7;
     //mp->prev_row = 4;
     //mp->prev_col = 7;
-    mp->dir = STOP;
+    mp->cmd = STOP;
 }
 
 void model_update(model_t *mp, command c){
     // avoid paying stack tax
     static uint8_t new_row, new_col;
-    static direction new_dir; 
-    switch (c){
+    static command new_cmd;
+    new_cmd = (c == NONE) ? mp->cmd : c;
+    switch (new_cmd){
         case STOP:  new_row = mp->row;
                     new_col = mp->col;
-                    new_dir = STOP;
+                    new_cmd = STOP;
                     break;
         case LEFT:  new_row = mp->row;
                     new_col = (mp->col == 0)? DISP_WIDTH -1 : mp->col - 1;
+                    new_cmd = LEFT;
                     break;
         case RIGHT: new_row = mp->row;
                     new_col = (mp->col >= DISP_WIDTH -1)? 0 : mp->col + 1;
-                    break;
-        case UP:    new_col = mp->col;
-                    new_row = (mp->row == 7)? 0 : mp->row + 1;
+                    new_cmd = RIGHT;
                     break;
         case DOWN:  new_col = mp->col;
-                    new_row = (mp->row == 0)? 7 : mp->row - 1;
+                    new_row = (mp->row == 7)? 0 : mp->row + 1;
+                    new_cmd = DOWN;
                     break;
-        default:    break;
+        case UP:    new_col = mp->col;
+                    new_row = (mp->row == 0)? 7 : mp->row - 1;
+                    new_cmd = UP;
+                    break;
+        default:    new_col = mp->col;
+                    new_row = mp->row;
+                    new_cmd = mp->cmd;
+                    break;
     }
     // update state
-    mp->dir = c;
-    //mp->prev_row = mp->row;
-    //mp->prev_col = mp->col;
+    mp->cmd = new_cmd;
     mp->row = new_row;
     mp->col = new_col;
 }
@@ -75,6 +77,7 @@ void view_update(model_t *mp){
     for(uint8_t i = 0; i < DISP_WIDTH; i = i + 1){
         *(MATRIX_BASE + i) = (mp->col == i)? 1U << (7 - mp->row) : 0;
     }
+    *HEX_DISP = (mp->row << 4) | mp->col;
 }
 
 // CONTROLLER
@@ -84,7 +87,22 @@ command controller_read(void){
     key = *KEYPAD;
     if (key & B8(10000000)){
         // valid key
-
+        switch (key & B8(01111111)){
+            case B8(00010001):  c = UP;     // UP
+                                break;
+            case B8(00100000):  c = LEFT;   // LEFT
+                                break;
+            case B8(00100001):  c = STOP;   // STOP
+                                break;
+            case B8(00100010):  c = RIGHT;  // RIGHT
+                                break;
+            case B8(00110001):  c = DOWN;   // DOWN
+                                break;
+            default:            c = NONE;
+                                break; 
+        }
+    } else {
+        c = NONE;
     }
     return c;
 }
@@ -110,4 +128,9 @@ void nmi_handler(void) __critical __interrupt {
     view_update(mp);
     busy = false;
     return;
+}
+
+void main(void){
+    while (true) {
+    }
 }
