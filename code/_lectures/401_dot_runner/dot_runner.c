@@ -23,7 +23,6 @@ typedef enum {
 
 typedef struct {
     uint8_t row, col;
-    //uint8_t prev_row, prev_col;
     command cmd;
 } model_t;
 
