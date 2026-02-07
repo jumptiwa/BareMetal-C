@@ -89,21 +89,21 @@
 </item>
 
 <item itemtype="Subcircuit" CircId="0xD000_D007_read2clr-125" mainComp="false" Show_id="false" Show_Val="false" Pos="-852,60" rotation="0" hflip="1" vflip="1" label="0xD000_D007_read2clr-125" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0">
-<mainCompProps MainCompId="Push-381" Norm_Close="false" Poles="1" Key="+" />
-
-<mainCompProps MainCompId="Push-384" Norm_Close="false" Poles="1" />
+<mainCompProps MainCompId="Push-234" Norm_Close="false" Poles="1" Key="&#x3C" />
 
 <mainCompProps MainCompId="Push-310" Norm_Close="false" Poles="1" />
 
-<mainCompProps MainCompId="Push-377" Norm_Close="false" Poles="1" />
+<mainCompProps MainCompId="Push-384" Norm_Close="false" Poles="1" />
 
-<mainCompProps MainCompId="Push-234" Norm_Close="false" Poles="1" Key="&#x3C" />
+<mainCompProps MainCompId="Push-387" Norm_Close="false" Poles="1" Key="-" />
+
+<mainCompProps MainCompId="Push-381" Norm_Close="false" Poles="1" Key="+" />
 
 <mainCompProps MainCompId="Push-264" Norm_Close="false" Poles="1" Key="&#x3E" />
 
-<mainCompProps MainCompId="Push-282" Norm_Close="false" Poles="1" />
+<mainCompProps MainCompId="Push-377" Norm_Close="false" Poles="1" />
 
-<mainCompProps MainCompId="Push-387" Norm_Close="false" Poles="1" Key="-" />
+<mainCompProps MainCompId="Push-282" Norm_Close="false" Poles="1" />
 </item>
 
 <item itemtype="Tunnel" CircId="Tunnel-126" mainComp="false" Show_id="false" Show_Val="false" Pos="-864,68" rotation="0" hflip="1" vflip="1" label="Tunnel-126" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="ADDR" IsBus="true" />
@@ -127,6 +127,8 @@
 <item itemtype="Tunnel" CircId="Tunnel-154" mainComp="false" Show_id="false" Show_Val="false" Pos="-688,-52" rotation="0" hflip="1" vflip="1" label="Tunnel-154" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="ADDR" IsBus="true" />
 
 <item itemtype="Subcircuit" CircId="0xE808_BCD_7seg-158" mainComp="false" Show_id="false" Show_Val="false" Pos="-668,-60" rotation="0" hflip="1" vflip="1" label="0xE808_BCD_7seg-158" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-159" mainComp="false" Show_id="false" Show_Val="false" Pos="-564,-52" rotation="0" hflip="-1" vflip="1" label="Fixed Voltage-159" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
 
 <item itemtype="Node" CircId="Node-34" mainComp="false" Pos="-900,252" />
 
@@ -385,5 +387,7 @@
 <item itemtype="Connector" uid="Connector-443" startpinid="Tunnel-155-pin" endpinid="0xE808_BCD_7seg-158-DATA" pointList="-688,-44,-676,-44" />
 
 <item itemtype="Connector" uid="Connector-444" startpinid="Tunnel-156-pin" endpinid="0xE808_BCD_7seg-158-WR_" pointList="-692,-36,-676,-36" />
+
+<item itemtype="Connector" uid="Connector-445" startpinid="0xE808_BCD_7seg-158-SHOW_LEFT" endpinid="Fixed Voltage-159-outnod" pointList="-588,-52,-580,-52" />
 
 </circuit>
