@@ -14,19 +14,32 @@
 
 ---
 
-### Triangular Arrows
+### Normal / Triangular Arrows
 <details><summary>expand</summary>
 
 | Direction | Filled (Black) | Code | Outline (White) | Code |
 | :---: | :---: | :---: | :---: | :---: |
-| Up    |	▲ |	`U+25B2` |	△ |	`U+25B3` |
-| Down  |	▼ |	`U+25BC` |	▽ |	`U+25BD` |
-| Left  |	◀ |	`U+25C0` |	◁ |	`U+25C1` |
-| Right |	▶ |	`U+25B6` |	▷ |	`U+25B7` |
+| **Up** | ▲ | `U+25B2` | △ | `U+25B3` |
+| **Down** | ▼ | `U+25BC` | ▽ | `U+25BD` |
+| **Left** | ◀ | `U+25C0` | ◁ | `U+25C1` |
+| **Right** | ▶ | `U+25B6` | ▷ | `U+25B7` |
+| **Up (Small)** | ▴ | `U+25B4` | ▵ | `U+25B5` |
+| **Down (Small)** | ▾ | `U+25BE` | ▿ | `U+25BF` |
+| **Left (Small)** | ◂ | `U+25C2` | ◃ | `U+25C3` |
+| **Right (Small)** | ▸ | `U+25B8` | ▹ | `U+25B9` |
+| **Pointer Left** | ◄ | `U+25C4` | ◅ | `U+25C5` |
+| **Pointer Right** | ► | `U+25BA` | ▻ | `U+25BB` |
+| **Arrow Up** | ↑ | `U+2191` | ⇧ | `U+21E7` |
+| **Arrow Down** | ↓ | `U+2193` | ⇩ | `U+21E9` |
+| **Arrow Left** | ← | `U+2190` | ⇦ | `U+21E6` |
+| **Arrow Right** | → | `U+2192` | ⇨ | `U+21E8` |
+| **Heavy Up** | ⬆ | `U+2B06` | ⇑ | `U+21D1` |
+| **Heavy Down** | ⬇ | `U+2B07` | ⇓ | `U+21D3` |
+| **Heavy Left** | ⬅ | `U+2B05` | ⇐ | `U+21D0` |
+| **Heavy Right** | ➡ | `U+27A1` | ⇒ | `U+21D2` |
 
 ```
-▲ ▼ ◀ ▶
-△ ▽ ◁ ▷
+▲ ▼ ◀ ▶ △ ▽ ◁ ▷
 ```
 
 </details>
