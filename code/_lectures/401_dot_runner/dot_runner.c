@@ -115,6 +115,8 @@ void nmi_handler(void) __critical __interrupt {
     if (busy) {
         return; // we cannot afford to do a second interrupt
     }
+
+    busy = true;
     if (!initialized) {
         model_init(mp);
         initialized = true;
