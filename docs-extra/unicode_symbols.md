@@ -14,7 +14,7 @@
 
 ---
 
-### Normal / Triangular Arrows
+### Normal / Triangular Arrows → ▶ ▷
 <details><summary>expand</summary>
 
 | Direction | Filled (Black) | Code | Outline (White) | Code |
@@ -175,6 +175,27 @@ Here are the standard Unicode "Large Circle" emojis available in other colors:
 | ・ | Katakana Middle Dot | `U+30FB` |
 | ． | Fullwidth Full Stop | `U+FF0E` |
 | ｡ | Halfwidth Ideographic Full Stop | `U+FF61` |
+
+</details>
+
+---
+
+### Symbols of keyboard ⌫ ⏎ ⇧ ⇥ ⇪
+
+<details><summary>expand</summary>
+
+| Key | Symbol | Unicode | Name |
+| :--- | :--- | :--- | :--- |
+| Backspace | ⌫ | U+232B | Erase to the Left |
+| Enter / Return | ⏎ | U+23CE | Return Symbol |
+| Shift | ⇧ | U+21E7 | Upwards White Arrow |
+| Control (Ctrl) | ⌃ | U+2303 | Up Arrowhead |
+| Option / Alt | ⌥ | U+2325 | Option Key |
+| Command (Win) | ⌘ | U+2318 | Place of Interest Sign |
+| Tab | ⇥ | U+21E5 | Rightwards Arrow to Bar |
+| Caps Lock | ⇪ | U+21EA | Upwards White Arrow from Bar |
+| Escape | ⎋ | U+238B | Broken Circle with Northwest Arrow |
+| Delete (Forward) | ⌦ | U+2326 | Erase to the Right |
 
 </details>
 
