@@ -8,6 +8,7 @@
 		<item name="0xD000_D007_read2clr" package="0xD000_D007_read2clr" data="0xD000_D007_read2clr"></item>
 		<item name="0xD010_keypad_4x4" package="0xD010_keypad_4x4" data="0xD010_keypad_4x4"></item>
 		<item name="0xD011_keypad_1x4" package="0xD011_keypad_1x4" data="0xD011_keypad_1x4"></item>
+		<item name="0xD012_keypad_1x8" package="0xD012_keypad_1x8" data="0xD012_keypad_1x8"></item>
 		<item name="0xD020_keyboard" package="0xD020_keyboard" data="0xD020_keyboard"></item>
 		<item name="0xE000_E003_LEDs" package="0xE000_E003_LEDs" data="0xE000_E003_LEDs"></item>
 		<item name="0xE008_strip_LEDs" package="0xE008_strip_LEDs" data="0xE008_strip_LEDs"></item>
@@ -15,6 +16,7 @@
 		<item name="0xE020_E027_LED_Matrix" package="0xE020_E027_LED_Matrix" data="0xE020_E027_LED_Matrix"></item>
 		<item name="0xE020_E02F_LED_Matrix" package="0xE020_E02F_LED_Matrix" data="0xE020_E02F_LED_Matrix"></item>
 		<item name="0xE040_UART" package="0xE040_UART" data="0xE040_UART"></item>
+		<item name="0xE080_8strip_LEDs" package="0xE080_8strip_LEDs" data="0xE080_8strip_LEDs"></item>
 		<item name="0xE800_E801_BCD_7seg" package="0xE800_E801_BCD_7seg" data="0xE800_E801_BCD_7seg"></item>
 		<item name="0xE800_E803_BCD_7seg" package="0xE800_E803_BCD_7seg" data="0xE800_E803_BCD_7seg"></item>
 		<item name="0xE808_BCD_7seg" package="0xE808_BCD_7seg" data="0xE808_BCD_7seg"></item>
