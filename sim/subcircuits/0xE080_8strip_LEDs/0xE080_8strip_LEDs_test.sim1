@@ -2,7 +2,7 @@
 
 <item itemtype="MCU" CircId="Z80-2" mainComp="false" Show_id="true" Show_Val="false" Pos="-828,156" rotation="0" hflip="1" vflip="1" label="Z80" idLabPos="23.4707,-16.3727" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="true" Producer="Zilog" CMOS="false" Single cycle I/O="false" Int_Vector="false" MainMcu="true" />
 
-<item itemtype="Memory" CircId="Memory-5" mainComp="false" Show_id="true" Show_Val="false" Pos="-668,220" rotation="0" hflip="1" vflip="1" label="ROM: 0x0000-0x3FFF" idLabPos="-40.1193,-93.0902" labelrot="0" valLabPos="-16,20" valLabRot="0" Address_Bits="14 _bits" Data_Bits="8 _bits" Persistent="true" Asynch="true" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1000 MΩ" Out_High_V="5 V" Out_Low_V="0 V" Out_Imped="40 Ω" Inverted="false" Open_Collector="false" pd_n="1 _Gates" Tpd_ps="10 ns" Tr_ps="3 ns" Tf_ps="4 ns" Mem="243,237,86,49,0,192,195,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,254,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,237,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,52,0,120,177,40,8,17,0,72,33,22,2,237,176,205,21,2,205,23,1,24,254,58,32,208,203,127,40,249,230,127,79,214,65,62,0,23,71,62,90,145,62,0,23,95,203,64,32,4,203,67,40,5,121,214,32,32,220,203,64,32,43,203,67,32,39,121,198,191,95,1,0,72,22,0,235,41,9,78,35,70,30,1,10,183,40,18,245,123,15,15,15,230,224,95,241,147,50,64,224,30,0,3,24,234,33,64,224,54,13,24,166,97,108,102,97,0,98,114,97,118,111,0,99,104,97,114,108,105,101,0,100,101,108,116,97,0,101,99,104,111,0,102,111,120,116,114,111,116,0,103,111,108,102,0,104,111,116,101,108,0,105,110,100,105,97,0,106,117,108,105,101,116,116,0,107,105,108,111,0,108,105,109,97,0,109,105,107,101,0,110,111,118,101,109,98,101,114,0,111,115,99,97,114,0,112,97,112,97,0,113,117,101,98,101,99,0,114,111,109,101,111,0,115,105,101,114,114,97,0,116,97,110,103,111,0,117,110,105,102,111,114,109,0,118,105,99,116,111,114,0,119,104,105,115,107,101,121,0,120,114,97,121,0,121,97,110,107,101,101,0,122,117,108,117,0,201,113,1,118,1,124,1,132,1,138,1,143,1,151,1,156,1,162,1,168,1,176,1,181,1,186,1,191,1,200,1,206,1,211,1,218,1,224,1,231,1,237,1,245,1,252,1,4,2,9,2,16,2,29,221,115,249,24,23,123,214,15,40,2,88,28,221,115,249,24,11,221,126,243,214,1,62,0,23,221,119,252,221,102,252,221,110,249,229,221,126,246,245,51,221,110,254,221,102,255,205,23,1,221,110,244,221,102,245,221,126,246,119,221,110,247,221,102,248,221,126,249,119,221,110,250,221,102,251,221,126,252,119,221,249,221,225,225,51,233,221,229,221,33,0,0,221,57,245,235,14,0,121,254,16,48,23,198,32,221,119,254,62,0,206,224,221,119,255,105,38,0,25,126,225,229,119,12,24,228,75,66,33,16,0,9,126,50,1,232,75,66,33,17,0,9,126,50,0,232,33,18,0,25,175,190,23,50,0,224,221,249,221,225,201,235,58,16,208,203,127,200,203,191,33,64,224,119,254,17,40,17,254,32,40,21,254,34,40,26,254,49,40,31,214,51,40,36,201,175,245,51,235,205,150,1,201,62,2,245,51,235,205,150,1,201,62,3,245,51,235,205,150,1,201,62,1,245,51,235,205,150,1,201,62,4,245,51,235,205,150,1,201,33,237,255,57,249,33,0,0,57,229,205,71,1,225,229,205,161,2,225,229,205,236,2,225,24,244,33,19,0,57,249,201,201," />
+<item itemtype="Memory" CircId="Memory-5" mainComp="false" Show_id="true" Show_Val="false" Pos="-668,220" rotation="0" hflip="1" vflip="1" label="ROM: 0x0000-0x3FFF" idLabPos="-40.1193,-93.0902" labelrot="0" valLabPos="-16,20" valLabRot="0" Address_Bits="14 _bits" Data_Bits="8 _bits" Persistent="true" Asynch="true" Input_High_V="2.5 V" Input_Low_V="2.5 V" Input_Imped="1000 MΩ" Out_High_V="5 V" Out_Low_V="0 V" Out_Imped="40 Ω" Inverted="false" Open_Collector="false" pd_n="1 _Gates" Tpd_ps="10 ns" Tr_ps="3 ns" Tf_ps="4 ns" Mem="243,237,86,49,0,192,195,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24,254,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,237,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,120,177,40,8,17,0,72,33,47,1,237,176,205,46,1,205,23,1,24,254,14,0,121,214,8,48,14,105,38,0,17,128,224,25,121,246,128,119,12,24,237,24,254,201,224,54,85,33,232,3,205,58,1,24,221,235,33,0,0,34,254,65,42,254,65,175,237,82,208,42,254,65,35,34,254,65,24,240,201,33,20,64,54,170,38,224,54,170,33,21,64,54,204,38,224,54,204,33,22,64,54,240,38,224,54,240,33,23,64,54,255,38,224,54,255,14,7,203,121,32,250,89,33,16,224,22,0,25,253,33,16,64,22,0,253,25,253,126,0,119,229,197,33,232,3,205,23,1,193,225,54,0,13,24,218,201,206,64,221,119,251,221,110,250,221,102,251,126,221,119,252,221,126,255,214,7,32,18,58,16,64,7,230,1,214,1,62,0,23,238,1,221,119,254,24,6,221,126,249,221,119,254,221,126,252,7,230,1,214,1,62,0,23,238,1,221,119,249,221,203,252,38,221,126,254,221,182,252,221,119,254,221,110,250,221,102,251,221,126,254,119,221,126,253,198,16,221,119,247,62,0,206,224,221,119,248,221,110,250,221,102,251,126,221,119,254,225,229,221,126,254,119,221,53,255,195,139,1,33,232,3,205,23,1,195,135,1,201," />
 
 <item itemtype="Clock" CircId="Clock-6" mainComp="false" Show_id="false" Show_Val="false" Pos="-860,332" rotation="0" hflip="1" vflip="1" label="Clock-6" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="true" Running="true" Voltage="5 V" Freq="200 kHz" Always_On="false" />
 
@@ -80,21 +80,13 @@
 <mainCompProps MainCompId="Push-144" Norm_Close="false" Poles="1" />
 </item>
 
-<item itemtype="Subcircuit" CircId="0xE040_UART-138" mainComp="false" Show_id="false" Show_Val="false" Pos="-952,60" rotation="0" hflip="1" vflip="1" label="0xE040_UART-138" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Tunnel" CircId="Tunnel-120" mainComp="false" Show_id="false" Show_Val="false" Pos="-936,68" rotation="0" hflip="1" vflip="1" label="Tunnel-120" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="ADDR" IsBus="true" />
 
-<item itemtype="Tunnel" CircId="Tunnel-139" mainComp="false" Show_id="false" Show_Val="false" Pos="-964,76" rotation="-360" hflip="1" vflip="1" label="Tunnel-139" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="DATA" IsBus="true" />
+<item itemtype="Tunnel" CircId="Tunnel-121" mainComp="false" Show_id="false" Show_Val="false" Pos="-936,76" rotation="-360" hflip="1" vflip="1" label="Tunnel-121" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="DATA" IsBus="true" />
 
-<item itemtype="Tunnel" CircId="Tunnel-140" mainComp="false" Show_id="false" Show_Val="false" Pos="-968,84" rotation="0" hflip="1" vflip="1" label="Tunnel-140" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="WR_" IsBus="false" />
+<item itemtype="Tunnel" CircId="Tunnel-122" mainComp="false" Show_id="false" Show_Val="false" Pos="-940,84" rotation="0" hflip="1" vflip="1" label="Tunnel-122" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="WR_" IsBus="false" />
 
-<item itemtype="Tunnel" CircId="Tunnel-141" mainComp="false" Show_id="false" Show_Val="false" Pos="-964,68" rotation="0" hflip="1" vflip="1" label="Tunnel-141" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="ADDR" IsBus="true" />
-
-<item itemtype="Tunnel" CircId="Tunnel-155" mainComp="false" Show_id="false" Show_Val="false" Pos="-856,-20" rotation="0" hflip="1" vflip="1" label="Tunnel-155" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="ADDR" IsBus="true" />
-
-<item itemtype="Tunnel" CircId="Tunnel-156" mainComp="false" Show_id="false" Show_Val="false" Pos="-856,-12" rotation="-360" hflip="1" vflip="1" label="Tunnel-156" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="DATA" IsBus="true" />
-
-<item itemtype="Tunnel" CircId="Tunnel-157" mainComp="false" Show_id="false" Show_Val="false" Pos="-860,-4" rotation="0" hflip="1" vflip="1" label="Tunnel-157" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Name="RD_" IsBus="false" />
-
-<item itemtype="Subcircuit" CircId="0xD020_keyboard-166" mainComp="false" Show_id="false" Show_Val="false" Pos="-836,-28" rotation="0" hflip="1" vflip="1" label="0xD020_keyboard-166" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Subcircuit" CircId="0xE080_8strip_LEDs-123" mainComp="false" Show_id="false" Show_Val="false" Pos="-916,60" rotation="0" hflip="1" vflip="1" label="0xE080_8strip_LEDs-123" idLabPos="0,-19.8032" labelrot="0" valLabPos="-16,20" valLabRot="0" />
 
 <item itemtype="Node" CircId="Node-34" mainComp="false" Pos="-900,252" />
 
@@ -330,16 +322,10 @@
 
 <item itemtype="Connector" uid="Connector-390" startpinid="push_to_zero-118-OUT" endpinid="Z80-2-CPORT0RESET" pointList="-844,292,-836,292" />
 
-<item itemtype="Connector" uid="Connector-411" startpinid="Tunnel-141-pin" endpinid="0xE040_UART-138-ADDR" pointList="-964,68,-960,68" />
+<item itemtype="Connector" uid="Connector-391" startpinid="Tunnel-120-pin" endpinid="0xE080_8strip_LEDs-123-ADDR" pointList="-936,68,-924,68" />
 
-<item itemtype="Connector" uid="Connector-412" startpinid="Tunnel-139-pin" endpinid="0xE040_UART-138-DATA" pointList="-964,76,-960,76" />
+<item itemtype="Connector" uid="Connector-392" startpinid="Tunnel-121-pin" endpinid="0xE080_8strip_LEDs-123-DATA" pointList="-936,76,-924,76" />
 
-<item itemtype="Connector" uid="Connector-413" startpinid="Tunnel-140-pin" endpinid="0xE040_UART-138-WR_" pointList="-968,84,-960,84" />
-
-<item itemtype="Connector" uid="Connector-446" startpinid="Tunnel-155-pin" endpinid="0xD020_keyboard-166-ADDR" pointList="-856,-20,-844,-20" />
-
-<item itemtype="Connector" uid="Connector-447" startpinid="Tunnel-156-pin" endpinid="0xD020_keyboard-166-DATA" pointList="-856,-12,-844,-12" />
-
-<item itemtype="Connector" uid="Connector-451" startpinid="Tunnel-157-pin" endpinid="0xD020_keyboard-166-RD_" pointList="-860,-4,-844,-4" />
+<item itemtype="Connector" uid="Connector-393" startpinid="Tunnel-122-pin" endpinid="0xE080_8strip_LEDs-123-WR_" pointList="-940,84,-924,84" />
 
 </circuit>

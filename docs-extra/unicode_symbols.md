@@ -180,7 +180,7 @@ Here are the standard Unicode "Large Circle" emojis available in other colors:
 
 ---
 
-### Symbols of keyboard ⌫ ⏎ ⇧ ⇥ ⇪
+### Symbols on keyboard ⌫ ⏎ ⇧ ⇥ ⇪
 
 <details><summary>expand</summary>
 
@@ -196,6 +196,21 @@ Here are the standard Unicode "Large Circle" emojis available in other colors:
 | Caps Lock | ⇪ | U+21EA | Upwards White Arrow from Bar |
 | Escape | ⎋ | U+238B | Broken Circle with Northwest Arrow |
 | Delete (Forward) | ⌦ | U+2326 | Erase to the Right |
+
+</details>
+
+---
+
+### Padlocks: 🔒 🔓 🔏 🔐
+
+<details><summary>expand</summary>
+
+| Symbol | Unicode | Details |
+| :---: | :---: | :--- |
+| 🔒 | U+1F512 | (Lock / Closed Padlock) |
+| 🔓 | U+1F513 | (Open Lock / Unlocked) |
+| 🔏 | U+1F50F | (Lock with Ink Pen) |
+| 🔐 | U+1F510 | (Closed Lock with Key) |
 
 </details>
 
